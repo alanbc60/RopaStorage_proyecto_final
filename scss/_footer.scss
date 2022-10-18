@@ -1,0 +1,47 @@
+//mixin del footer
+@mixin atributoSeccionFooter($color,$margen,$alineacionTexto) {
+    color: $color;
+    margin: $margen;
+    text-align: $alineacionTexto;
+}
+
+.contenedor_footer {
+    width: auto;
+    margin-top: auto;
+    display: grid;
+    gap: 10px;
+    margin-top: 10px;
+    background-color: rgba(58,94,178,1);
+    /* Indicar cuantas columnas tendra */
+    grid-template-columns: repeat(4, 1fr);
+    /* Indicar cuantas filas tendra */
+    grid-template-rows: 230px;
+    grid-template-areas:
+        "footer_seccion1_logo footer_seccion2_contacto footer_cliente footer_seccion4_redes";
+
+    .footer_seccion1_logo {
+        @include atributoSeccionFooter(white, 17px, center);
+        
+    }
+
+    .footer_seccion2_contacto {
+        @include atributoSeccionFooter(white, 17px, center);
+        a {
+            @include atributoSeccionFooter(white, 10px, center);
+            text-decoration: none;
+        }
+    }
+
+    .footer_cliente {
+        @include atributoSeccionFooter(white, 17px, center);
+    }
+
+    .footer_seccion4_redes {
+        @include atributoSeccionFooter(white, 17px, center);
+        
+        a {
+            @include atributoSeccionFooter(white, 10px, center);
+            text-decoration: none;
+        }
+    }
+}
