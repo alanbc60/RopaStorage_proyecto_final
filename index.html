@@ -27,7 +27,7 @@
                     <div class="opciones_rapidas">
                         <a href="">recibir correos</a>
                         <a href="">promociones</a>
-                        <a href="">Carrito</a>
+                        <a class="abrir_carrito">carrito</a>
                     </div>
                 </div>
                 <div class="parte_inferior">
@@ -49,6 +49,36 @@
                 </div>
         </div>
     </header>
+
+    
+	<!-- nav start -->
+	<div class="nav-overlay"></div>
+	<nav class="nav">
+		<div class="head">
+			<strong>Carrito</strong>
+			<div class="close">&times;</div>
+		</div>
+        <div class="contenedor_carrito">
+            <div class="contenedor_carrito-listaProductos">
+                <h1>Lista productos</h1>
+            </div>
+            <div class="contenedor_carrito-precioTotal">
+                <!-- Carrito -->
+
+                    <h2>Carrito</h2>
+                    <!-- Elementos del carrito -->
+                    <ul id="carritosss" class="list-group"></ul>
+                    <hr>
+                    <!-- Precio total -->
+                    <p class="text-right">Total: <span id="total"></span>&euro;</p>
+                    <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+                
+            </div>
+        </div>
+	</nav>
+	<!-- nav end -->
+    
+
     <section>
         <div class="contenedor_principal">
             <div class="contenedor_inicio">
@@ -57,8 +87,84 @@
                         <h2>Realiza una encuesta rapida y gana un descuento</h2>
                     </div>
                     <div class="contenedor_inicio-boton">
-                        <a id="open">Realizar encuesta</a>
+                        <a class="abrirRealizarEncuesta">Realizar encuesta</a>
                     </div>
+                    <div class="contenedor_inicio-botonRecompensa">
+                        <a class="botonGenerarRecomendacion">Generar recompensa</a>
+                    </div>
+                </div>
+
+                <div class="contenedor_inicio-encuesta">
+                    <div class="encuesta_primera_pregunta">
+                        <div class="titulo_encuesta">
+                            <h2>Encuesta</h2>
+                        </div>
+                        <h3>Esta es una encuesta para saber los gustos de nuestros usuarios y 
+                            asi adaptar nuestros productos a ustedes.Al finalizar la encuesta recibiras un premio</h3>
+                        <div class="primera_pregunta-botones">
+                            <div class="botones-boton_aceptar_cancelar">
+                                <button id="botonAceptarPrimeraPregunta">Aceptar</button>
+                                <button id="botonCancelarPrimeraPregunta">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="encuesta_segundaPregunta-Edad_Sexo">
+                        <div class="row mt-4">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-body">
+
+                                        <div class="form-group">
+                                            <h3>
+                                                Ingrese su edad(debes tener un minimo de 18 años):
+                                            </h3>
+                                            <input type="text" name="dato[]" class="form-control datoInput">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <h3>Indica tu sexo( ingrese el numero que le indica): <br> 1.Masculino <br> 2.Femenino
+                                            </h3>
+                                            <input type="text" name="dato[]" class="form-control datoInput">
+                                        </div>
+                                        <br>
+                                        <button type="submit" class="btn btn-primary recibiEdadSexo">Mirar</button>
+                                    </div>
+                                
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="encuesta_tercerPregunta-preferencias">
+                        
+                            <legend>Generalmente que te gusta comprar/ver aqui:</legend>
+                            <label>
+                                <input type="radio" name="preferencias" id="preferencia1" value="playeras">1.Playeras
+                            </label>
+                            <br>
+                            <label>
+                                <input type="radio" name="preferencias" id="preferencia2" value="chamarras">2.Chamarras
+                            </label>
+                            <br>
+                            <label>
+                                <input type="radio" name="preferencias" id="preferencia3" value="blusas">3.Blusas
+                            </label>
+                            <br>
+                            <label>
+                                <input type="radio" name="preferencias" id="preferencia4" value="tenis">4.Tenis
+                            </label>
+                            <br>
+                            <label>
+                                <input type="radio" name="preferencias" id="preferencia5" value="pants/pantalon">5.Pants/Pantalón
+                            </label>
+                            <br>
+                            <button type="submit" class="btn btn-primary radioBoton_Preferencias">Confirmar</button>
+                        
+                    </div>
+
                 </div>
             </div>
 
@@ -117,7 +223,7 @@
             <div class="contenedor_novedades">
 
                     <!-- card 1 -->
-                    <div class="card_novedades">
+                    <div class="card_novedades" id="items">
 
                         <div class="card_novedades_imagen">
                             <img src="imagenes/chamarras/Hombres/imagen1.jpg" alt="novedades-el catrin">
@@ -296,6 +402,8 @@
                 </div>
             </div>
         </div>
+
+
 
         <!-- <div data-pushbar="">
 

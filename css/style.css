@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 * {
   margin: 0;
@@ -10,6 +11,176 @@ body {
   overflow-x: hidden;
   /*elimina el scroll del eje x*/
   background-color: #ecf7ff;
+}
+
+.navbar {
+  width: 100%;
+}
+
+.navbar .parte_superior {
+  width: 100%;
+  height: auto;
+  display: flex;
+  min-width: 320px;
+  position: relative;
+}
+
+.navbar .parte_superior .informacion_empresa {
+  width: 500px;
+  height: 45px;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.navbar .parte_superior .informacion_empresa a {
+  text-decoration: none;
+  list-style: none;
+  font-size: 18px;
+  color: white;
+  margin-right: 5px;
+}
+
+.navbar .parte_superior .informacion_empresa a:hover {
+  background-color: red;
+}
+
+.navbar .parte_superior .contenedor_titulo {
+  width: 500px;
+  height: 45px;
+}
+
+.navbar .parte_superior .contenedor_titulo h1 {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.navbar .parte_superior .opciones_rapidas {
+  padding-top: 5px;
+  padding-left: 120px;
+  width: 500px;
+  height: 45px;
+  cursor: pointer;
+  background-color: #333333;
+}
+
+.navbar .parte_superior .opciones_rapidas a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar .parte_superior .opciones_rapidas a:hover {
+  color: red;
+}
+
+.navbar .parte_inferior {
+  width: 100%;
+  height: auto;
+}
+
+.navbar .parte_inferior ul {
+  list-style: none;
+  display: flex;
+  margin: 0 auto;
+  font-size: 20px;
+  width: 600px;
+}
+
+.navbar .parte_inferior ul li {
+  align-items: center;
+  margin-right: 10px;
+  margin: 0 auto;
+}
+
+.navbar .parte_inferior ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+/*nav: fondo de tamaño completo donde se usa como efecto blur para la sidebar*/
+.nav-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 499;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  transform: translateX(-100%);
+}
+
+/* Desplaza el fondo de arriba  cuando se cliquea el boton*/
+.nav-overlay.open {
+  transform: translateX(0%);
+}
+
+/* Sidebar */
+/* Debemos de ocultar el sidebar */
+.nav {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: blue;
+  height: 100%;
+  width: 300px;
+  z-index: 500;
+  transform: translateX(300px);
+  overflow-y: auto;
+}
+
+.nav .head {
+  top: 0;
+  z-index: 501;
+  background-color: #111111;
+  width: 100%;
+  height: 60px;
+}
+
+.nav .head strong {
+  height: 50px;
+  color: #dddddd;
+  font-size: 16px;
+  text-align: left;
+  line-height: 50px;
+  padding: 0 50px 0 15px;
+  display: block;
+  width: 100%;
+  font-weight: 600;
+  border-bottom: 1px solid #333333;
+}
+
+.nav .head .close {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  right: 0;
+  top: 0;
+  font-size: 32px;
+  color: #dddddd;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+}
+
+.nav .contenedor_carrito {
+  background-color: palegreen;
+  top: 0;
+  margin-top: -300px;
+  width: 100%;
+}
+
+.nav .contenedor_carrito .contenedor_carrito-listaProductos {
+  background-color: white;
+  height: 300px;
+}
+
+.nav .contenedor_carrito .contenedor_carrito-precioTotal {
+  background-color: azure;
+}
+
+.nav.open {
+  transform: translateX(0px);
 }
 
 /* boton checar(se usa en el contenedor novideades u contenedor-principal-imagen) */
@@ -49,82 +220,9 @@ body {
   box-shadow: 0 4px 0 #3f2c89;
 }
 
-.box_shadow-generico, .contenedor_principal .contenedor_novedades .card_novedades, .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a {
+.box_shadow-generico, .contenedor_principal .contenedor_inicio .contenedor_inicio-encuesta .encuesta_primera_pregunta, .contenedor_principal .contenedor_inicio .contenedor_inicio-encuesta .encuesta_segundaPregunta-Edad_Sexo, .contenedor_principal .contenedor_novedades .card_novedades, .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a {
   background: white;
   box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16), -10px -10px 10px -1px rgba(10, 99, 169, 0.16);
-}
-
-.navbar {
-  width: 100%;
-}
-
-.navbar .parte_superior {
-  width: 100%;
-  height: auto;
-  display: flex;
-  min-width: 320px;
-  position: relative;
-}
-
-.navbar .parte_superior .informacion_empresa {
-  width: 500px;
-  height: 45px;
-  text-align: center;
-  padding-top: 5px;
-}
-
-.navbar .parte_superior .informacion_empresa a {
-  text-decoration: none;
-  list-style: none;
-  font-size: 18px;
-  color: white;
-}
-
-.navbar .parte_superior .contenedor_titulo {
-  width: 500px;
-  height: 45px;
-}
-
-.navbar .parte_superior .contenedor_titulo h1 {
-  color: white;
-  font-size: 30px;
-  text-align: center;
-  font-weight: bold;
-}
-
-.navbar .parte_superior .opciones_rapidas {
-  padding-top: 5px;
-  padding-left: 120px;
-  width: 500px;
-  height: 45px;
-}
-
-.navbar .parte_superior .opciones_rapidas a {
-  color: white;
-}
-
-.navbar .parte_inferior {
-  width: 100%;
-  height: auto;
-}
-
-.navbar .parte_inferior ul {
-  list-style: none;
-  display: flex;
-  margin: 0 auto;
-  font-size: 20px;
-  width: 600px;
-}
-
-.navbar .parte_inferior ul li {
-  align-items: center;
-  margin-right: 10px;
-  margin: 0 auto;
-}
-
-.navbar .parte_inferior ul li a {
-  text-decoration: none;
-  color: white;
 }
 
 .contenedor_principal {
@@ -141,6 +239,7 @@ body {
 .contenedor_principal .contenedor_inicio {
   grid-area: contenedor_inicio;
   /* width: 90%; */
+  display: flex;
   height: 800px;
   background-image: url("../imagenes/copia.jpg");
   background-repeat: no-repeat;
@@ -175,6 +274,7 @@ body {
 }
 
 .contenedor_principal .contenedor_inicio .contenedor_inicio-texto-boton .contenedor_inicio-boton a {
+  text-decoration: none;
   cursor: pointer;
   background-color: white;
   color: red;
@@ -189,6 +289,90 @@ body {
   padding: 10px 35px;
   border-radius: 30px;
   color: white;
+}
+
+.contenedor_principal .contenedor_inicio .contenedor_inicio-texto-boton .contenedor_inicio-botonRecompensa {
+  width: 230px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.contenedor_principal .contenedor_inicio .contenedor_inicio-texto-boton .contenedor_inicio-botonRecompensa a {
+  text-decoration: none;
+  cursor: pointer;
+  background-color: white;
+  color: red;
+  border: 2px solid red;
+  padding: 10px  35px;
+  border-radius: 30px;
+}
+
+.contenedor_principal .contenedor_inicio .contenedor_inicio-texto-boton .contenedor_inicio-botonRecompensa a:hover {
+  background-color: blue;
+  border: 2px solid red;
+  padding: 10px 35px;
+  border-radius: 30px;
+  color: white;
+}
+
+.contenedor_principal .contenedor_inicio .contenedor_inicio-encuesta {
+  background-color: rebeccapurple;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  height: 420px;
+  width: 470px;
+  margin-top: 250px;
+  margin-left: 60px;
+  display: none;
+  padding: 10px;
+}
+
+.contenedor_principal .contenedor_inicio .contenedor_inicio-encuesta .encuesta_primera_pregunta {
+  display: none;
+  height: 300px;
+  width: 450px;
+  background-color: #ecf7ff;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  display: none;
+}
+
+.contenedor_principal .contenedor_inicio .contenedor_inicio-encuesta .encuesta_primera_pregunta h3 {
+  font-weight: 200;
+}
+
+.contenedor_principal .contenedor_inicio .contenedor_inicio-encuesta .encuesta_segundaPregunta-Edad_Sexo {
+  height: 300px;
+  width: 450px;
+  background-color: #ecf7ff;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  display: none;
+}
+
+.contenedor_principal .contenedor_inicio .contenedor_inicio-encuesta .encuesta_segundaPregunta-Edad_Sexo h3 {
+  font-size: 20px;
+}
+
+.contenedor_principal .contenedor_inicio .contenedor_inicio-encuesta .encuesta_tercerPregunta-preferencias {
+  display: none;
+  height: 300px;
+  width: 450px;
+  background-color: #ecf7ff;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.contenedor_principal .contenedor_inicio .contenedor_inicio-encuesta .encuesta_tercerPregunta-preferencias label {
+  margin-left: 10px;
+}
+
+.contenedor_principal .contenedor_inicio .contenedor_inicio-encuesta .encuesta_tercerPregunta-preferencias button {
+  margin-left: 10px;
+}
+
+.contenedor_principal .contenedor_inicio .contenedor_inicio-encuesta .noHacerEncuesta {
+  display: none;
 }
 
 .contenedor_principal .contenedor_inicio-servicios {

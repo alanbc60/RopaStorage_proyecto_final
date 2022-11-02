@@ -1,13 +1,14 @@
 //Evento al hacer click en el boton realizar encuesta
 
-
+const open = document.getElementById('open');
 const modal_container = document.getElementById('contenedor_principal-modal');
-const botonCerrarModal = document.getElementById('close');
+const close = document.getElementById('close');
 //Variables globales
-let edad,sexo;
-let exito,opcion;
+let edad;
+let sexo;
+let exito;
+let opcion;
 let nombreProducto;
-let ruta;
 var arrayInput = new Array();
 
 
@@ -21,114 +22,28 @@ const contenedoresEncuesta = {
     contenedorPreguntaEdad_Sexo: document.querySelector(".encuesta_segundaPregunta-Edad_Sexo"),
     //Tercer pregunta
     contenedorPreguntapreferencias: document.querySelector(".encuesta_tercerPregunta-preferencias"),
-
+    //Cuarta pregunta
+    contenedorRecomendacion: document.querySelector(".encuesta_cuartaPregunta-recomendacion")
 }
 
 
-//Objeto Botones
-const botonesEncuesta = {
-    //Boton que abre una encuesta y los contenedores
-    botonAbrirEncuesta: document.querySelector('.abrirRealizarEncuesta'),
-    //Boton de generar recompensa
-    botonGenerarRecomendacion: document.querySelector('.botonGenerarRecomendacion'),
-    //Botones para realizar una encuesta o no
-    botonRealizarEncuesta: document.querySelector('#botonAceptarPrimeraPregunta'),
-    botonNoRealizarEncuesta: document.querySelector('#botonCancelarPrimeraPregunta'),
-    //Boton del contenedorPreguntaEdad_Sexo
-    botonRecibirEdadSexo: document.querySelector('.recibiEdadSexo'),
-    //Boton del contenedorPreguntapreferencias
-    botonGuardarPreferencias: document.querySelector('.radioBoton_Preferencias')
-}
-
-
-//evento que abre la encuesta
-botonesEncuesta.botonAbrirEncuesta.addEventListener('click', () => {
-    console.log("Abriendo encuesta..");
-    contenedoresEncuesta.mensaje1.style.display = "block";
-    contenedoresEncuesta.contenedorPrimeraPregunta.style.display ="block";
-    botonesEncuesta.botonAbrirEncuesta.style.display = "none";
-});
-
-botonesEncuesta.botonGenerarRecomendacion.style.display = "none";
+//Botones para realizar una encuesta o no
+let botonRealizarEncuesta   = document.querySelector('#botonAceptarPrimeraPregunta');
+let botonNoRealizarEncuesta = document.querySelector('#botonCancelarPrimeraPregunta');
 
 // Eventos cuando damos aceptar la primera pregunta
-botonesEncuesta.botonRealizarEncuesta.addEventListener('click', ()=>{
-    //Quitar el contenedor de la primera pregunta
-    contenedoresEncuesta.contenedorPrimeraPregunta.style.display = "none";
-
-    // ==== Segunda pregunta ====
-    do{
-        exito = true;
-        //Contenedor de la pregunta edad y sexo
-        contenedoresEncuesta.contenedorPreguntaEdad_Sexo.style.display = "block";
-
-        botonesEncuesta.botonRecibirEdadSexo.addEventListener('click', () => {
-            datosArrayEdadSexo();
-            console.log("La Edad es: " + edad);
-            console.log("El Sexo es: " + sexo);
-            if ((edad < 18 || (sexo != 1 && sexo != 2))) {
-                console.log("Sexo o edad incorrrectos, intente de nuevo");
-                alert("Sexo o edad incorrrectos, intente de nuevo");
-                exito = false;
-                console.log("Exito..: " + exito);
-                vaciarArray(arrayInput);
-                console.log(arrayInput);
-            }
-            else{
-                contenedoresEncuesta.contenedorPreguntaEdad_Sexo.style.display = "none";
-                contenedoresEncuesta.contenedorPreguntapreferencias.style.display = "block"; 
-            }
-        });   
-    }while(exito == false);        
+botonRealizarEncuesta.addEventListener('click', ()=>{
+    encuestaPersonalizada(true);
 });
 
-//Contenedor de preferencias
-
-botonesEncuesta.botonGuardarPreferencias.addEventListener('click', () => {
-    verificarPreferencias();
-    if(opcion == 1){
-        opcion = String("Playeras");
-        ruta = "imagenes/" + opcion + "/";
-        console.log("La ruta es: " + ruta);
-    }
-    else if(opcion==2){
-        opcion = String("chamarras");
-        ruta = "imagenes/" + opcion + "/";
-        console.log("La ruta es: " + ruta);   
-    }
-    else if(opcion==3){
-        opcion = String("blusas");
-        ruta = "imagenes/" + opcion + "/";
-        console.log("La ruta es: " + ruta);
-    }
-    else if(opcion==4){
-        opcion = String("Tenis");
-        ruta = "imagenes/" + opcion + "/";
-        console.log("La ruta es: " + ruta);                
-    }
-    else if(opcion==5){
-        opcion = String("pantalones");
-        ruta = "imagenes/" + opcion + "/";
-        console.log("La ruta es: " + ruta);   
-    }
-    contenedoresEncuesta.contenedorPreguntapreferencias.style.display = "none";
-    // contenedoresEncuesta.contenedorRecomendacion.style.display = "block";
-    contenedoresEncuesta.mensaje1.style.display = "none";
-    botonesEncuesta.botonAbrirEncuesta.style.display = "none";
-    //Mostrar el boton de generarRecompensa
-    botonesEncuesta.botonGenerarRecomendacion.style.display = "block";
-});
-
-botonesEncuesta.botonNoRealizarEncuesta.addEventListener('click', ()=> {
-    contenedoresEncuesta.mensaje1.style.display = "none";
-    alert("Bueno, ya sera para la otra");
+botonNoRealizarEncuesta.addEventListener('click', ()=> {
+contenedoresEncuesta.mensaje1.style.display = "none";
+alert("Bueno, ya sera para la otra");
 });
 
 
-botonesEncuesta.botonGenerarRecomendacion.addEventListener('click', ()=>{
-    console.log("Se presiono generar recompensa");
-    generarRecompensa(3000,ruta, sexo);
-});
+let botonAceptarRecomendacion = document.querySelector('#botonAceptarRecomendacion');
+let botonNoAceptarRecomendacion = document.querySelector('#botonNoaceptarRecomendacion');
 
 
 function datosArrayEdadSexo(){
@@ -148,34 +63,134 @@ function vaciarArray(arrayInput){
     arrayInput.splice(0, arrayInput.length);
 }
 function verificarPreferencias(){
-    console.log("Entro a verificacion");
-    
-    if(document.getElementById("preferencia1").checked){
+    if(document.getElementById('preferencia1').checked==true){
         console.log("Seleccionado playeras");
         opcion = 1;
     }
-    if(document.getElementById("preferencia2").checked){
+    if(document.getElementById('preferencia2').checked){
         alert("Eligio chamarras");
         console.log("Seleccionado chamarras");
         opcion = 2;
     }
-    if(document.getElementById("preferencia3").checked){
+    if(document.getElementById('preferencia3').checked){
         alert("Eligio blusas");
         console.log("Seleccionado blusas");
         opcion = 3;
     }
-    if(document.getElementById("preferencia4").checked){
+    if(document.getElementById('preferencia4').checked){
         alert("Eligio tenis");
         console.log("Seleccionado tenis");
         opcion = 4;
     }
-    if(document.getElementById("preferencia5").checked){
+    if(document.getElementById('preferencia5').checked){
         alert("Eligio pants/pantalones");
         console.log("Seleccionado pants");
         opcion = 5;
     }
 }
+
+
+//Contenedor de preferencias
+let botonGuardarPreferencias = document.querySelector('.radioBoton_Preferencias');
+
+botonGuardarPreferencias.addEventListener('click', () => {
+//Direccionamos la ruta dependiendo la opcion que elegio
+    if(opcion == 1){
+                opcion = String("Playeras");
+                ruta = "imagenes/" + opcion + "/";
+                console.log("La ruta es: " + ruta);
+            }
+            else if(opcion==2){
+                opcion = String("chamarras");
+                ruta = "imagenes/" + opcion + "/";
+                console.log("La ruta es: " + ruta);   
+            }
+            else if(opcion==3){
+                opcion = String("blusas");
+                ruta = "imagenes/" + opcion + "/";
+                console.log("La ruta es: " + ruta);
+            }
+            else if(opcion==4){
+                opcion = String("Tenis");
+                ruta = "imagenes/" + opcion + "/";
+                console.log("La ruta es: " + ruta);                
+            }
+            else if(opcion==5){
+                opcion = String("pantalones");
+                ruta = "imagenes/" + opcion + "/";
+                console.log("La ruta es: " + ruta);   
+            }
+            contenedoresEncuesta.contenedorRecomendacion.style.display = "block";
+            contenedoresEncuesta.contenedorPreguntapreferencias.style.display = "none";
+
+});
         
+
+
+
+//Funcion principal que ejecuta al cliquear realizar encuesta
+function encuestaPersonalizada(datoUsuario) {
+    //Quitar el contenedor de la primera pregunta
+    contenedoresEncuesta.contenedorPrimeraPregunta.style.display = "none";
+    if (datoUsuario == true) {
+        let ruta = "";
+        console.log("Mensaje de confirmacion: " + datoUsuario);
+        do{
+            exito = true;
+            //Contenedor de la pregunta edad y sexo
+            contenedoresEncuesta.contenedorPreguntaEdad_Sexo.style.display = "block";
+            let botonRecibirEdadSexo = document.querySelector('.recibiEdadSexo');
+            botonRecibirEdadSexo.addEventListener('click', () => {
+                datosArrayEdadSexo();
+                console.log("La Edad es: " + edad);
+                console.log("El Sexo es: " + sexo);
+                if ((edad < 18 || (sexo != 1 && sexo != 2))) {
+                    console.log("Sexo o edad incorrrectos, intente de nuevo");
+                    alert("Sexo o edad incorrrectos, intente de nuevo");
+                    exito = false;
+                    console.log("Exito..: " + exito);
+                    vaciarArray(arrayInput);
+                    console.log(arrayInput);
+                }
+                else{
+                    contenedoresEncuesta.contenedorPreguntaEdad_Sexo.style.display = "none";
+                    contenedoresEncuesta.contenedorPreguntapreferencias.style.display = "block";
+                    verificarPreferencias();
+                }
+            });
+
+        }while(exito == false);
+
+            // generarRecomendaciones(edad, sexo, ruta, opcion);
+
+
+
+                    // ==== Contenedor de sugerir recomendacion ======
+                    // botonAceptarRecomendacion.addEventListener('click', () => {
+                    //     generarRecomendaciones(edad, sexo, ruta, opcion);
+                    //     // contenedorRecomendacion.style.display = "none";
+                    //     contenedoresEncuesta.contenedorRecomendacion.style.display = "none";
+                    //     contenedoresEncuesta.mensaje1.style.display = "none";
+                    // });
+
+                    // botonNoAceptarRecomendacion.addEventListener('click', ()=>{
+                    //         contenedoresEncuesta.mensaje1.style.display = "none";
+                    // });
+
+                
+
+    }
+
+}
+
+function generarRecomendaciones(edad, sexo, ruta,opcion) {
+    console.log("=======Parametros========");
+    console.log("Edad: " + edad);
+    console.log("Sexo: " + sexo);
+    console.log("opcion: "+opcion);
+    generarRecompensa(3000,ruta,sexo,opcion);
+}
+
 async function generarRecompensa(tiempo_ms, ruta, sexo) {
     let numRandom = generarAleatorio(0, 3);
     // let numRandom = 0;
@@ -266,19 +281,15 @@ async function generarRecompensa(tiempo_ms, ruta, sexo) {
                 break;
         }
     }
-    else{
-        console.log("Error, no se paso parametros");
-    }
+
+
 
     // modal_container.classList.add('show');
-    botonCerrarModal.addEventListener('click', async () => {
+    close.addEventListener('click', async () => {
         modal_container.classList.remove('show');
-        console.log("Se cerro el modal");
-        // await sleep(tiempo_ms);
-
+        await sleep(tiempo_ms);
+        // alert("El descuento que obtuviste es de 10% en playeras");
     });
-    botonesEncuesta.botonAbrirEncuesta.style.display = "none";
-    botonesEncuesta.generarRecompensa.style.display = "none";
 
 }
 
@@ -290,9 +301,13 @@ function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+//Evento que abre la encuesta
+open.addEventListener('click', () => {
+    contenedoresEncuesta.mensaje1.style.display = "block";
+    contenedoresEncuesta.contenedorPrimeraPregunta.style.display ="block";
+});
 
 
-// =============== carrito  ======================
 // desplegar barra al presionar boton Carrito
 const abrirCarrito = document.querySelector('.abrir_carrito');
 const nav = document.querySelector(".nav");
@@ -307,6 +322,7 @@ abrirCarrito.addEventListener("click",() =>{
  	hideNav();
  });
 
+ // hide nav after clicked outside of nav
  fondoBlurCompleto.addEventListener("click",(e) =>{
    hideNav();
  })
@@ -325,6 +341,11 @@ abrirCarrito.addEventListener("click",() =>{
    fondoBlurCompleto.style.transition = "all 0.5s ease 0.3s";
    fondoBlurCompleto.classList.remove("open");
  }
+
+
+
+
+//Objeto que sirve para los productos de novedades
 
 
 

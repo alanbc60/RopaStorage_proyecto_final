@@ -1,0 +1,171 @@
+.navbar{
+    width: 100%;
+  
+    .parte_superior{
+      width: 100%;
+      height: auto;
+      display: flex;
+      min-width: 320px;
+      position: relative;
+      // background-color: #333333;
+
+      .informacion_empresa{
+        width: 500px;
+        height: 45px; 
+        text-align: center;
+        padding-top: 5px;
+        a{
+          text-decoration: none;
+          list-style: none;
+          font-size: 18px;
+          color: white;
+          margin-right: 5px;
+        }
+        a:hover{
+          background-color: red;
+        }
+      }
+      
+      .contenedor_titulo{
+        width: 500px;
+        height: 45px;
+        h1{
+          color: white;
+          font-size: 30px;
+          text-align: center;
+          font-weight: bold;
+        }
+  
+      }
+    //   Aqui esta el carrito y los modal
+      .opciones_rapidas{
+        padding-top: 5px;
+        padding-left: 120px;
+        width: 500px;
+        height: 45px;
+        cursor: pointer;
+        background-color: #333333;
+        
+        a{
+          text-decoration: none;  
+          color: white;
+        }
+        a:hover{
+            color: red;
+        }
+      }
+    }
+    .parte_inferior{
+      width: 100%;
+      height: auto;
+  
+      // text-align: center;
+  
+      ul{
+        list-style: none;
+        display: flex;
+        margin: 0 auto;
+        font-size: 20px;
+        width: 600px;
+        li{
+          align-items: center;
+          margin-right: 10px;
+          margin: 0 auto;
+  
+          a{
+            text-decoration: none;
+            color: white;
+          }
+        }
+      }
+  
+    }
+    
+  }
+/*nav: fondo de tamaño completo donde se usa como efecto blur para la sidebar*/
+.nav-overlay{
+	position: fixed;
+	left:0;
+	top:0;
+	z-index: 499;
+	background-color: rgba(0,0,0,0.5);
+	height: 100%;
+	width: 100%;
+	transform: translateX(-100%);
+}
+/* Desplaza el fondo de arriba  cuando se cliquea el boton*/
+.nav-overlay.open{
+    transform: translateX(0%);	
+}
+
+/* Sidebar */
+/* Debemos de ocultar el sidebar */
+.nav{
+	position: fixed;
+	right:0;
+	top:0;
+	background-color: blue;
+	height: 100%;
+	width: 300px;
+	z-index: 500;
+	transform: translateX(300px);
+	overflow-y: auto;
+  // Titulo de la sidebar y contenedor
+  .head{
+    // position: sticky;
+    // position: -webkit-sticky;
+    top:0;
+    z-index: 501;
+    background-color: #111111;
+    width: 100%;
+    height: 60px;
+
+    // titulo
+    strong{
+      height:50px;
+      color: #dddddd;
+      font-size: 16px;
+      text-align: left;
+      line-height: 50px;
+      padding:0 50px 0 15px;
+      display: block;
+      width: 100%;
+      font-weight: 600;
+      border-bottom: 1px solid #333333;
+    }
+    // Contenedor donde esta el icono de cerrar
+    .close{
+	    position: absolute;
+	    height: 50px;
+	    width: 50px;
+	    right:0;
+	    top:0;
+	    font-size: 32px;
+	    color:#dddddd;
+	    text-align: center;
+	    line-height: 50px;
+	    cursor: pointer;
+    }
+    
+  }
+  .contenedor_carrito{
+    background-color: palegreen;
+    top: 0;
+    margin-top: -300px;
+    width: 100%;
+    .contenedor_carrito-listaProductos{
+      background-color: white;
+      height: 300px;
+
+    }
+    .contenedor_carrito-precioTotal{
+      background-color: azure;
+    }
+  }
+
+}
+
+
+.nav.open{
+    transform: translateX(0px);	
+}
