@@ -1,18 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Document</title>
-</head>
-<body>
-    <header>
-        <div class="navbar">
-            
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="keywords" content="a" />
+        <meta name="description" content="a" />
+        <title>ClotheStorage</title>
+        <!-- ----------BOOTSTRAP---------- -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- ----------CSS---------- -->
+        <link rel="stylesheet" href="css/style.css" />
+        <!-- ----------ICONS FONTAWESOME---------- -->
+        <script src="https://kit.fontawesome.com/d0be8199f6.js" crossorigin="anonymous"></script>
+        <!-- ----------GOOGLE FONTS---------- -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+        <!-- BOX ICONS -->
+        <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+        <!-- TOASTIFY -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+    </head>
+    <body>
+
+
+        <header>
+            <div class="navbar">
                 <div class="parte_superior">
 
                     <div class="informacion_empresa">
@@ -23,123 +37,99 @@
                     <div class="contenedor_titulo">
                         <h1>RopaStorage</h1>
                     </div>
-
-                    <div class="opciones_rapidas">
-                        <a href="">recibir correos</a>
-                        <a href="">promociones</a>
-                        <a class="abrir_carrito">carrito</a>
+                    <div class="headerSections">
+                        <i class="bx bx-menu burger-btn" id="burger-icon"></i>
+                        <i class="bx bx-x cross-btn" id="cross-icon"></i>
+                        <a href="#">Productos</a>
+                        <i class="fa-solid fa-cart-shopping" id="cart-icon"><span id="contador">0</span></i>
                     </div>
                 </div>
-                <div class="parte_inferior">
-                    <ul>
-                        <li>
-                            <a href="">Hombre</a>
-                        </li>
-                        <li>
-                            <a href="">Mujer </a>
-                        </li>
-                        <li>
-                            <a href="">Tenis</a>
-                        </li>
-                        <li>
-                            <a href="">Nuevos</a>
-                        </li>
-
-                    </ul>
+ 
+                <div class="cart">
+                    <h2 class="cart-title">Tu Carrito</h2>
+                    <div class="cart-content"></div>
+                    <div class="total">
+                        <div class="total-title">Total</div>
+                        <div class="total-price">$0</div>
+                    </div>
+                    <button type="button" class="btn-buy">Pagá ahora</button>
+                    <i class="bx bx-x" id="close-cart"></i>
                 </div>
-        </div>
-    </header>
-
-    
-	<!-- nav start -->
-	<div class="nav-overlay"></div>
-	<nav class="nav">
-		<div class="head">
-			<strong>Carrito</strong>
-			<div class="close">&times;</div>
-		</div>
-        <div class="contenedor_carrito">
-            <div class="contenedor_carrito-listaProductos">
-                <h1>Lista productos</h1>
             </div>
-            <div class="contenedor_carrito-precioTotal">
-                <!-- Carrito -->
+        </header>
 
-                    <h2>Carrito</h2>
-                    <!-- Elementos del carrito -->
-                    <ul id="carritosss" class="list-group"></ul>
-                    <hr>
-                    <!-- Precio total -->
-                    <p class="text-right">Total: <span id="total"></span>&euro;</p>
-                    <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
-                
-            </div>
+
+        <div class="burger-menu" id="burger-menu">
+            <a href="./index.html">
+                <p>Inicio</p>
+            </a>
+            <a href="./pages/contacto.html">
+                <p>Contacto</p>
+            </a>
         </div>
-	</nav>
-	<!-- nav end -->
-    
 
-    <section>
-        <div class="contenedor_principal">
-            <div class="contenedor_inicio">
-                <div class="contenedor_inicio-texto-boton">
-                    <div class="contenedor_inicio-texto">
-                        <h2>Realiza una encuesta rapida y gana un descuento</h2>
-                    </div>
-                    <div class="contenedor_inicio-boton">
-                        <a class="abrirRealizarEncuesta">Realizar encuesta</a>
-                    </div>
-                    <div class="contenedor_inicio-botonRecompensa">
-                        <a class="botonGenerarRecomendacion">Generar recompensa</a>
-                    </div>
-                </div>
-
-                <div class="contenedor_inicio-encuesta">
-                    <div class="encuesta_primera_pregunta">
-                        <div class="titulo_encuesta">
-                            <h2>Encuesta</h2>
+        <section>
+            <div class="contenedor_principal" id="main">
+                <div class="contenedor_inicio">
+                    <div class="contenedor_inicio-texto-boton">
+                        <div class="contenedor_inicio-texto">
+                            <h2>Realiza una encuesta rapida y gana un descuento</h2>
                         </div>
-                        <h3>Esta es una encuesta para saber los gustos de nuestros usuarios y 
-                            asi adaptar nuestros productos a ustedes.Al finalizar la encuesta recibiras un premio</h3>
-                        <div class="primera_pregunta-botones">
-                            <div class="botones-boton_aceptar_cancelar">
-                                <button id="botonAceptarPrimeraPregunta">Aceptar</button>
-                                <button id="botonCancelarPrimeraPregunta">Cancelar</button>
+                        <div class="contenedor_inicio-boton">
+                            <a class="abrirRealizarEncuesta">Realizar encuesta</a>
+                        </div>
+                        <div class="contenedor_inicio-botonRecompensa">
+                            <a class="botonGenerarRecomendacion">Generar recompensa</a>
+                        </div>
+                    </div>
+        
+                    <div class="contenedor_inicio-encuesta">
+                        <div class="encuesta_primera_pregunta">
+                            <div class="titulo_encuesta">
+                                <h2>Encuesta</h2>
                             </div>
-                        </div>
-                    </div>
-                    <div class="encuesta_segundaPregunta-Edad_Sexo">
-                        <div class="row mt-4">
-                            <div class="col-lg-12">
-                                <div class="card">
-                                    <div class="card-body">
-
-                                        <div class="form-group">
-                                            <h3>
-                                                Ingrese su edad(debes tener un minimo de 18 años):
-                                            </h3>
-                                            <input type="text" name="dato[]" class="form-control datoInput">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <h3>Indica tu sexo( ingrese el numero que le indica): <br> 1.Masculino <br> 2.Femenino
-                                            </h3>
-                                            <input type="text" name="dato[]" class="form-control datoInput">
-                                        </div>
-                                        <br>
-                                        <button type="submit" class="btn btn-primary recibiEdadSexo">Mirar</button>
-                                    </div>
-                                
+                            <h3>Esta es una encuesta para saber los gustos de nuestros usuarios y
+                                asi adaptar nuestros productos a ustedes.Al finalizar la encuesta recibiras un premio</h3>
+                            <div class="primera_pregunta-botones">
+                                <div class="botones-boton_aceptar_cancelar">
+                                    <button id="botonAceptarPrimeraPregunta">Aceptar</button>
+                                    <button id="botonCancelarPrimeraPregunta">Cancelar</button>
                                 </div>
-
                             </div>
-
                         </div>
-
-                    </div>
-
-                    <div class="encuesta_tercerPregunta-preferencias">
-                        
+                        <div class="encuesta_segundaPregunta-Edad_Sexo">
+                            <div class="row mt-4">
+                                <div class="col-lg-12">
+                                    <div class="card">
+                                        <div class="card-body">
+        
+                                            <div class="form-group">
+                                                <h3>
+                                                    Ingrese su edad(debes tener un minimo de 18 años):
+                                                </h3>
+                                                <input type="text" name="dato[]" class="form-control datoInput">
+                                            </div>
+        
+                                            <div class="form-group">
+                                                <h3>Indica tu sexo( ingrese el numero que le indica): <br> 1.Masculino <br>
+                                                    2.Femenino
+                                                </h3>
+                                                <input type="text" name="dato[]" class="form-control datoInput">
+                                            </div>
+                                            <br>
+                                            <button type="submit" class="btn btn-primary recibiEdadSexo">Mirar</button>
+                                        </div>
+        
+                                    </div>
+        
+                                </div>
+        
+                            </div>
+        
+                        </div>
+        
+                        <div class="encuesta_tercerPregunta-preferencias">
+        
                             <legend>Generalmente que te gusta comprar/ver aqui:</legend>
                             <label>
                                 <input type="radio" name="preferencias" id="preferencia1" value="playeras">1.Playeras
@@ -158,299 +148,125 @@
                             </label>
                             <br>
                             <label>
-                                <input type="radio" name="preferencias" id="preferencia5" value="pants/pantalon">5.Pants/Pantalón
+                                <input type="radio" name="preferencias" id="preferencia5"
+                                    value="pants/pantalon">5.Pants/Pantalón
                             </label>
                             <br>
                             <button type="submit" class="btn btn-primary radioBoton_Preferencias">Confirmar</button>
-                        
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="contenedor_inicio-servicios">
-                <div class="card_inicio_servicios">
-                    <div class="card_inicio_servicios-imagen-titulo">
-                        <div class="card_servicios-imagen">
-                            
+        
                         </div>
-                        <div class="card_servicios-titulo-texto">
-                            <h1>Titulo</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, ab voluptatibus 
-                                magnam dolorem quas debitis minus delectus, dolores sequi, atque eaque fuga esse ut 
-                                ullam neque amet corporis repellat. Vero!
-                            </p>
-
-                        </div>
+        
                     </div>
                 </div>
-
-                <div class="card_inicio_servicios">
-                    <div class="card_inicio_servicios-imagen-titulo">
-                        <div class="card_servicios-imagen">
-                            
-                        </div>
-                        <div class="card_servicios-titulo-texto">
-                            <h1>Titulo</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, ab voluptatibus 
-                                magnam dolorem quas debitis minus delectus, dolores sequi, atque eaque fuga esse ut 
-                                ullam neque amet corporis repellat. Vero!
-                            </p>
-
+        
+                <!-- ==== Contenedor servicios ==== -->
+                <div class="contenedor_servicios">
+                    <div class="card_inicio_servicios">
+                        <div class="card_inicio_servicios-imagen-titulo">
+                            <div class="card_servicios-imagen">
+        
+                            </div>
+                            <div class="card_servicios-titulo-texto">
+                                <h1>Titulo</h1>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, ab voluptatibus
+                                    magnam dolorem quas debitis minus delectus, dolores sequi, atque eaque fuga esse ut
+                                    ullam neque amet corporis repellat. Vero!
+                                </p>
+        
+                            </div>
                         </div>
                     </div>
+        
+                    <div class="card_inicio_servicios">
+                        <div class="card_inicio_servicios-imagen-titulo">
+                            <div class="card_servicios-imagen">
+        
+                            </div>
+                            <div class="card_servicios-titulo-texto">
+                                <h1>Titulo</h1>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, ab voluptatibus
+                                    magnam dolorem quas debitis minus delectus, dolores sequi, atque eaque fuga esse ut
+                                    ullam neque amet corporis repellat. Vero!
+                                </p>
+        
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="card_inicio_servicios">
+                        <div class="card_inicio_servicios-imagen-titulo">
+                            <div class="card_servicios-imagen">
+        
+                            </div>
+                            <div class="card_servicios-titulo-texto">
+                                <h1>Titulo</h1>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, ab voluptatibus
+                                    magnam dolorem quas debitis minus delectus, dolores sequi, atque eaque fuga esse ut
+                                    ullam neque amet corporis repellat. Vero!
+                                </p>
+        
+                            </div>
+                        </div>
+                    </div>
+        
+        
                 </div>
-
-                <div class="card_inicio_servicios">
-                    <div class="card_inicio_servicios-imagen-titulo">
-                        <div class="card_servicios-imagen">
-                            
-                        </div>
-                        <div class="card_servicios-titulo-texto">
-                            <h1>Titulo</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, ab voluptatibus 
-                                magnam dolorem quas debitis minus delectus, dolores sequi, atque eaque fuga esse ut 
-                                ullam neque amet corporis repellat. Vero!
-                            </p>
-
-                        </div>
+        
+                <!-- == Contenedor novedades === -->
+                <div class="contenedor_novedades">
+                    <div class="filtro-marca">
+                        <button type="button" id="btn-todos">Todos</button>
+                        <button type="button" id="btn-adidas">Adidas</button>
+                        <button type="button" id="btn-asics">Asics</button>
+                        <button type="button" id="btn-lacoste">Lacoste</button>
+                        <button type="button" id="btn-nike">Nike</button>
                     </div>
-                </div>
-                
-
-            </div>
-            <!-- Contenddor card novedades -->
-            <div class="contenedor_novedades">
-
-                    <!-- card 1 -->
-                    <div class="card_novedades" id="items">
-
-                        <div class="card_novedades_imagen">
-                            <img src="imagenes/chamarras/Hombres/imagen1.jpg" alt="novedades-el catrin">
-                        </div>
-
-                        <div class="card_novedades-texto-boton">
-                            <div class="card_novedades_texto">
-                                <h2>Chamarra negra <br> Chamarra blanca <br> <b>$1000 MX</b> </h2>
-                            </div>
-                            <div class="card_novedades_boton">
-                                <a href="./pages/carrito.html">Agregar</a>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- card 2 -->
-                    <div class="card_novedades">
-
-                        <div class="card_novedades_imagen">
-                            <img src="imagenes/chamarras/Hombres/imagen2.jpg" alt="novedades-chamarra blanca">
-                        </div>
-
-                        <div class="card_novedades-texto-boton">
-                            <div class="card_novedades_texto">
-                                <h2>Chamarra blanca <br> El Diablo <br> <b>$1100 MX</b></h2>
-                            </div>
-                            <div class="card_novedades_boton">
-                                <a href="./pages/carrito.html">Agregar</a>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- card 3 -->
-                    <div class="card_novedades">
-
-                        <div class="card_novedades_imagen">
-                            <img src="imagenes/Playeras/Hombres/imagen1.jpg" alt="novedades- playera malandro">
-                        </div>
-
-                        <div class="card_novedades-texto-boton">
-                            <div class="card_novedades_texto">
-                                <h2>Playera simple<br>Malandro<br> <b>$500 MX</b></h2>
-                            </div>
-                            <div class="card_novedades_boton">
-                                <a href="./pages/carrito.html">Agregar</a>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- card 4 -->
-                    <div class="card_novedades">
-
-                        <div class="card_novedades_imagen">
-                            <img src="imagenes/chamarras/Mujeres/07_mujer_chamarra_bomber_mangaLarga.jpeg"
-                                alt="novedades- human roja">
-                        </div>
-
-                        <div class="card_novedades-texto-boton">
-                            <div class="card_novedades_texto">
-                                <h2> Sudadera roja <br> Human girl<br> <b>$1300 MX</b></h2>
-                            </div>
-                            <div class="card_novedades_boton">
-                                <a href="./pages/carrito.html">Agregar</a>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- card 5 -->
-                    <div class="card_novedades">
-
-                        <div class="card_novedades_imagen">
-                            <img src="imagenes/Playeras/Mujeres/06_mujer_3032889_A.jpeg" alt="novedades- camisa retro">
-                        </div>
-
-                        <div class="card_novedades-texto-boton">
-                            <div class="card_novedades_texto">
-                                <h2>Camisa multicolor <br> tematica retro<br> <b>$900 MX</b></h2>
-                            </div>
-                            <div class="card_novedades_boton">
-                                <a href="./pages/carrito.html">Agregar</a>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- card 6 -->
-                    <div class="card_novedades">
-
-                        <div class="card_novedades_imagen">
-                            <img src="imagenes/Playeras/Mujeres/09_mujer_playera_carita_damas.png" alt="novedades - especial damas">
-                        </div>
-
-                        <div class="card_novedades-texto-boton">
-                            <div class="card_novedades_texto">
-                                <h2>Playera rosa <br> corazón animado<br> <b>$600 MX</b></h2>
-                            </div>
-                            <div class="card_novedades_boton">
-                                <a href="./pages/carrito.html">Agregar</a>
-                            </div>
-                        </div>
-                        
-                    </div>
-
-
-                    <!--  card 7 -->
-                    <div class="card_novedades">
-
-                        <div class="card_novedades_imagen">
-                            <img src="imagenes/chamarras/Hombres/imagen3.jpg"
-                                alt="novedades - sudadera human">
-                        </div>
-
-                        <div class="card_novedades-texto-boton">
-                            <div class="card_novedades_texto">
-                                <h2>Sudadera negra <br> Human girl<br> <b>$1600 MX</b></h2>
-                            </div>
-                            <div class="card_novedades_boton">
-                                <a href="./pages/carrito.html">Agregar</a>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                    <!--  card 8 -->
-                    <div class="card_novedades">
-
-                        <div class="card_novedades_imagen">
-                            <img src="imagenes/chamarras/Hombres/hombre_chamarra_bomber_efectoPiel.webp"
-                                alt="novedades - chamarra stranger">
-                        </div>
-
-                        <div class="card_novedades-texto-boton">
-                            <div class="card_novedades_texto">
-                                <h2>Chamarra mezclilla <br> Stranger Things<br> <b>$2000 MX</b></h2>
-                            </div>
-                            <div class="card_novedades_boton">
-                                <a href="./pages/carrito.html">Agregar</a>
-                            </div>
-                        </div>
-
-                    </div>
-
+                    <div class="productCatalog" id="productCatalog"></div>
                 </div>
                 <!-- Fin del contenedor novedades -->
-
-        </div>
-        <div class="contenedor_principal_modal" id="contenedor_principal-modal">
-            <div class="contenedor_modal">
-
-                <div class="contenedor_modal-titulo-boton">
-                    <div class="contenedor_modal-titulo">
-                        <h1 id="titulo_modal"></h1>                               
+            </div>
+        
+        
+            <div class="contenedor_principal_modal" id="contenedor_principal-modal">
+                <div class="contenedor_modal">
+        
+                    <div class="contenedor_modal-titulo-boton">
+                        <div class="contenedor_modal-titulo">
+                            <h1 id="titulo_modal"></h1>
+                        </div>
+                        <div class="contenedor_modal-boton_close">
+                            <a id="close">Cerrar</a>
+                        </div>
                     </div>
-                    <div class="contenedor_modal-boton_close">
-                        <a id="close">Cerrar</a>       
+        
+                    <div class="contenedor_modal-imagen">
+                        <img id="imagen_modal" src="" alt="imagen_modal">
+                    </div>
+        
+                    <div class="contenedor_modal-texto">
+                        <p id="modal_texto">
+                            Es una buena eleccion :),agregala
+                        </p>
+                    </div>
+        
+                    <div class="contenedor_modal-boton">
+                        <a href="">Agregar</a>
                     </div>
                 </div>
-
-                <div class="contenedor_modal-imagen">
-                    <img id="imagen_modal" src="" alt="imagen_modal">
-                </div>
-
-                <div class="contenedor_modal-texto">
-                    <p id="modal_texto">
-                        Es una buena eleccion :),agregala
-                    </p>
-                </div>
-
-                <div class="contenedor_modal-boton">
-                    <a href="">Agregar</a>
-                </div>
             </div>
-        </div>
+        </section>
 
 
-
-        <!-- <div data-pushbar="">
-
-        </div> -->
-    
-    </section>
-
-    <!-- ============= pie de página ============= -->
-    <footer>
-        <div class="contenedor_footer">
-            <!-- columna 1: titulo y descripción -->
-            <div class="footer_seccion1_logo">
-                <h3>RopaStorage</h3>
-                <p>Está página fue creada <br>
-                    con fines educativos
-                </p>
-            </div>
-            <!--Columna 2: contactos que tiene la empresa  -->
-            <div class="footer_seccion2_contacto">
-                <h3>Sobre nosotros</h3>
-                <a class="fa fa-address-card" href="https://www.google.com/intl/es/gmail/about/" target="_blank">
-                    Ropa_Storage@gmail.com</a>
-                <a class="fa fa-map-marker" href="https://goo.gl/maps/gZJJznjvERVLBmFa7" target="_blank"> México, CDMX,
-                    Viaducto</a>
-                <a class="fa fa-whatsapp" href="https://www.whatsapp.com/?lang=es" target="_blank"> 553883838383</a>
-            </div>
-            <!-- columna 3: atención a cliente -->
-            <div class="footer_cliente">
-                <h3>Atencion al cliente</h3>
-                <p>Terminos y condiciones</a>
-                <p>Preguntas frecuentes</p>
-
-            </div>
-            <!-- columna 4: redes sociales -->
-            <div class="footer_seccion4_redes">
-                <h3>Siguenos en:</h3>
-                <a class="fa fa-facebook" href="https://www.facebook.com" target="_blank"> Facebook</a>
-                <br>
-                <a class="fa fa-twitter" href="https://www.twitter.com" target="_blank"> Twitter</a>
-                <br>
-                <a class="fa fa-instagram" href="https://www.Instagram.com" target="_blank"> Instagram</a>
-            </div>
-        </div>
-    </footer>
-    <!-- ============= Fin de pie de página ============= -->
-
-    <script src="script.js"></script>
-    <!-- <script src="prueba_pushbar.js"></script> -->
-</body>
+        <!-- Footer -->
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="js/typed.js"></script>
+        <script src="js/stock.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/modal.js"></script>
+        <script src="js/filter.js"></script>
+        <script src="js/alerts.js"></script>
+        <script src="script.js"></script>
+    </body>
 </html>

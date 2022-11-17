@@ -1,0 +1,11 @@
+[
+    {"id": 1, "categoria": "Chamarra", "especificacion": "Chamarra blanca", "nombre": "El diablo", "precio": 1300, "link": "imagenes/blusas/Mujeres/05_candy_top.jpeg"},
+    {"id": 2, "categoria": "Chamarra", "especificacion": "Chamarra blanca", "nombre": "El diablo 1", "precio": 1400, "link": "imagenes/blusas/Mujeres/07_rabbit_top.png"},
+    {"id": 3, "categoria": "Chamarra", "especificacion": "Chamarra blanca", "nombre": "El diablo 2", "precio": 1500, "link": "imagenes/blusas/Mujeres/imagen1.jpg"},
+    {"id": 4, "categoria": "Chamarra", "especificacion": "Chamarra blanca", "nombre": "El diablo 3", "precio": 1600, "link": "imagenes/blusas/Mujeres/05_candy_top.jpeg"},
+    {"id": 5, "categoria": "Chamarra", "especificacion": "Chamarra blanca", "nombre": "El diablo 4", "precio": 1700, "link": "imagenes/blusas/Mujeres/05_candy_top.jpeg"},
+    {"id": 6, "categoria": "Chamarra", "especificacion": "Chamarra blanca", "nombre": "El diablo 5", "precio": 1800, "link": "imagenes/blusas/Mujeres/05_candy_top.jpeg"},
+    {"id": 7, "categoria": "Chamarra", "especificacion": "Chamarra blanca", "nombre": "El diablo 6" , "precio": 1900, "link": "imagenes/blusas/Mujeres/05_candy_top.jpeg"},
+    {"id": 8, "categoria": "Chamarra", "especificacion": "Chamarra blanca", "nombre": "El diablo 7", "precio": 1100, "link": "imagenes/blusas/Mujeres/05_candy_top.jpeg"}
+
+]

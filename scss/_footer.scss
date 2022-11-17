@@ -1,47 +1,82 @@
-//mixin del footer
-@mixin atributoSeccionFooter($color,$margen,$alineacionTexto) {
-    color: $color;
-    margin: $margen;
-    text-align: $alineacionTexto;
+.container__footer {
+    width: 100%;
+    // max-width: 1170px;
+
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.contenedor_footer {
-    width: auto;
-    margin-top: auto;
-    display: grid;
-    gap: 10px;
-    margin-top: 10px;
-    background-color: rgba(58,94,178,1);
-    /* Indicar cuantas columnas tendra */
-    grid-template-columns: repeat(4, 1fr);
-    /* Indicar cuantas filas tendra */
-    grid-template-rows: 230px;
-    grid-template-areas:
-        "footer_seccion1_logo footer_seccion2_contacto footer_cliente footer_seccion4_redes";
+.footer {
+    background-color: #229acd;
+    padding: 40px 0 10px 0;
+}
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+.footer-col h4 {
+    font-size: 18px;
+    color: white;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+.footer-col h4::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: white;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+.footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: white;
+    text-decoration: none;
+    font-weight: 300;
+    display: block;
+    transition: all 0.3s ease;
+}
+.footer-col ul li a:hover {
+    color: #0a2a6b;
+    padding-left: 8px;
+}
+.footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: #ffffff33;
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: white;
+    transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover {
+    color: #24262b;
+    background-color: white;
+}
 
-    .footer_seccion1_logo {
-        @include atributoSeccionFooter(white, 17px, center);
-        
-    }
-
-    .footer_seccion2_contacto {
-        @include atributoSeccionFooter(white, 17px, center);
-        a {
-            @include atributoSeccionFooter(white, 10px, center);
-            text-decoration: none;
-        }
-    }
-
-    .footer_cliente {
-        @include atributoSeccionFooter(white, 17px, center);
-    }
-
-    .footer_seccion4_redes {
-        @include atributoSeccionFooter(white, 17px, center);
-        
-        a {
-            @include atributoSeccionFooter(white, 10px, center);
-            text-decoration: none;
+.footer__copyright {
+    text-align: end;
+    margin-right: 20px;
+    a {
+        color: white;
+        font-size: 16px;
+        &:hover {
+            color: #24262b;
+            transition: all 0.2s ease;
         }
     }
 }
+

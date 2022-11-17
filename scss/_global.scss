@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+}
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;    /*elimina el scroll del eje x*/
+    // background-color: map-get($map: $paleta-colores, $key: 'segundoColorPrincipal');
+  }
+  
+.bg {
+    background-color: #f1f1f1;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+button {
+    border: none;
+    background-color: inherit;
+}

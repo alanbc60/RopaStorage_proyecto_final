@@ -294,37 +294,37 @@ function sleep(ms) {
 
 // =============== carrito  ======================
 // desplegar barra al presionar boton Carrito
-const abrirCarrito = document.querySelector('.abrir_carrito');
-const nav = document.querySelector(".nav");
-const fondoBlurCompleto = document.querySelector(".nav-overlay");
-const cerrarSidebar = document.querySelector(".close");
+// const abrirCarrito = document.querySelector('.abrir_carrito');
+// const nav = document.querySelector(".nav");
+// const fondoBlurCompleto = document.querySelector(".nav-overlay");
+// const cerrarSidebar = document.querySelector(".close");
 
-abrirCarrito.addEventListener("click",() =>{
-    console.log("Se abrio el carrito")
- 	navShow();
- });
- cerrarSidebar.addEventListener("click",() =>{
- 	hideNav();
- });
+// abrirCarrito.addEventListener("click",() =>{
+//     console.log("Se abrio el carrito")
+//  	navShow();
+//  });
+//  cerrarSidebar.addEventListener("click",() =>{
+//  	hideNav();
+//  });
 
- fondoBlurCompleto.addEventListener("click",(e) =>{
-   hideNav();
- })
+//  fondoBlurCompleto.addEventListener("click",(e) =>{
+//    hideNav();
+//  })
 
- function navShow(){
-    fondoBlurCompleto.style.transition = "all 0.5s ease";
-    fondoBlurCompleto.classList.add("open");
-    nav.style.transition = "all 0.3s ease 0.5s";
-    nav.classList.add("open");
- }
+//  function navShow(){
+//     fondoBlurCompleto.style.transition = "all 0.5s ease";
+//     fondoBlurCompleto.classList.add("open");
+//     nav.style.transition = "all 0.3s ease 0.5s";
+//     nav.classList.add("open");
+//  }
 
- function hideNav(){
-   //hacer una transicion a la hora de cerrar
-   nav.style.transition = "all 0.3s ease";
-   nav.classList.remove("open");
-   fondoBlurCompleto.style.transition = "all 0.5s ease 0.3s";
-   fondoBlurCompleto.classList.remove("open");
- }
+//  function hideNav(){
+//    //hacer una transicion a la hora de cerrar
+//    nav.style.transition = "all 0.3s ease";
+//    nav.classList.remove("open");
+//    fondoBlurCompleto.style.transition = "all 0.5s ease 0.3s";
+//    fondoBlurCompleto.classList.remove("open");
+//  }
 
 
 
