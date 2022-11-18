@@ -37,10 +37,11 @@
                     <div class="contenedor_titulo">
                         <h1>RopaStorage</h1>
                     </div>
-                    <div class="headerSections">
+
+                    <div class="contenedor_productos_carrito">
                         <i class="bx bx-menu burger-btn" id="burger-icon"></i>
                         <i class="bx bx-x cross-btn" id="cross-icon"></i>
-                        <a href="#">Productos</a>
+                        <a href="#contenedor-novedades">Productos</a>
                         <i class="fa-solid fa-cart-shopping" id="cart-icon"><span id="contador">0</span></i>
                     </div>
                 </div>
@@ -164,13 +165,11 @@
                     <div class="card_inicio_servicios">
                         <div class="card_inicio_servicios-imagen-titulo">
                             <div class="card_servicios-imagen">
-        
+                                <img src="imagenes/services/credit-card.png" alt="">
                             </div>
                             <div class="card_servicios-titulo-texto">
-                                <h1>Titulo</h1>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, ab voluptatibus
-                                    magnam dolorem quas debitis minus delectus, dolores sequi, atque eaque fuga esse ut
-                                    ullam neque amet corporis repellat. Vero!
+                                <h1>Pago seguro</h1>
+                                <p>Aceptamos cualquier tipo de tarjeta para mayor comodidad del cliente
                                 </p>
         
                             </div>
@@ -180,13 +179,12 @@
                     <div class="card_inicio_servicios">
                         <div class="card_inicio_servicios-imagen-titulo">
                             <div class="card_servicios-imagen">
-        
+                                <img src="imagenes/services/return-on-investment.png" alt="">
                             </div>
                             <div class="card_servicios-titulo-texto">
-                                <h1>Titulo</h1>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, ab voluptatibus
-                                    magnam dolorem quas debitis minus delectus, dolores sequi, atque eaque fuga esse ut
-                                    ullam neque amet corporis repellat. Vero!
+                                <h1>Regreso de dinero</h1>
+                                <p>En dado caso de un producto defectuoso o que no te haya quedado, tienes 3
+                                    dias para hacer la devolucion y regresarte tú dinero
                                 </p>
         
                             </div>
@@ -196,13 +194,12 @@
                     <div class="card_inicio_servicios">
                         <div class="card_inicio_servicios-imagen-titulo">
                             <div class="card_servicios-imagen">
-        
+                                <img src="imagenes/services/support.png" alt="">
                             </div>
                             <div class="card_servicios-titulo-texto">
-                                <h1>Titulo</h1>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, ab voluptatibus
-                                    magnam dolorem quas debitis minus delectus, dolores sequi, atque eaque fuga esse ut
-                                    ullam neque amet corporis repellat. Vero!
+                                <h1>Servicio en linea</h1>
+                                <p>Contamos con servicio en linea en un horario de 11 am a 7 pm en horario local
+                                    de la CDMX
                                 </p>
         
                             </div>
@@ -213,7 +210,7 @@
                 </div>
         
                 <!-- == Contenedor novedades === -->
-                <div class="contenedor_novedades">
+                <div class="contenedor_novedades" id="contenedor-novedades">
                     <div class="filtro-marca">
                         <button type="button" id="btn-todos">Todos</button>
                         <button type="button" id="btn-adidas">Adidas</button>
@@ -268,5 +265,22 @@
         <script src="js/filter.js"></script>
         <script src="js/alerts.js"></script>
         <script src="script.js"></script>
+
+        <script type="text/javascript">
+
+            // scroll de la navbar
+            // cuando haga el scroll va hacer un evento
+            window.addEventListener("scroll", function () {
+                // capturamos el header
+                var navbar_bajar = document.querySelector("header");
+                navbar_bajar.classList.toggle("scroll_bajar", window.scrollY > 0);
+            });
+    
+            //var hamburger = document.querySelector(".hamburger");
+            //hamburger.addEventListener("click", function () {
+            //    document.querySelector("body").classList.toggle("active");
+            //});
+    
+        </script>
     </body>
 </html>

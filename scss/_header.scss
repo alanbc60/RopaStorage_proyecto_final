@@ -1,7 +1,63 @@
+// Personalizacion del navbar para landing page
+header {
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 3;
+    width: 100%;
+    top: 0;
+}
+
+header.scroll_bajar {    
+    background-color: white;
+    
+}
+header.scroll_bajar .navbar{
+
+    .parte_superior{
+        .informacion_empresa{
+            a{
+                text-decoration: none;
+                list-style: none;
+                font-size: 18px;
+                color: red;
+                margin-right: 5px;
+            }
+            a:hover{
+                background-color: red;
+            }
+        }
+        .contenedor_titulo{
+            h1{
+                color: red;
+                font-size: 30px;
+                text-align: center;
+                font-weight: bold;
+              }
+        }
+        .contenedor_productos_carrito{
+            a{
+                text-decoration: none;
+                list-style: none;
+                font-size: 18px;
+                color: red;
+                margin-right: 5px;
+            }
+
+            a:hover{
+                background-color: red;
+            }
+
+            #cart-icon{
+                color: red;
+            }
+        }
+    }
+}
+
 .navbar{
     width: 100%;
-    background-color: red;
-  
+    // background-color: red;
+
     .parte_superior{
       width: 100%;
       height: auto;
@@ -12,7 +68,7 @@
 
       .informacion_empresa{
         width: 500px;
-        height: 45px; 
+        height: 45px;
         text-align: center;
         padding-top: 5px;
         a{
@@ -26,7 +82,7 @@
           background-color: red;
         }
       }
-      
+
       .contenedor_titulo{
         width: 500px;
         height: 45px;
@@ -36,14 +92,14 @@
           text-align: center;
           font-weight: bold;
         }
-  
+
       }
 
-      .headerSections {
+      .contenedor_productos_carrito {
         display: flex;
         justify-content: center;
         align-items: center;
-        & a {
+        a {
             margin-right: 50px;
             color: white;
             font-weight: 700;
@@ -54,8 +110,11 @@
                 transition: 0.3s;
             }
         }
+        #burger-icon, #cross-icon{
+            display: none;
+        }
     }
-    
+
   }
 }
 

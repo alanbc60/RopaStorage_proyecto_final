@@ -457,9 +457,55 @@ button {
   background-color: inherit;
 }
 
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 3;
+  width: 100%;
+  top: 0;
+}
+
+header.scroll_bajar {
+  background-color: white;
+}
+
+header.scroll_bajar .navbar .parte_superior .informacion_empresa a {
+  text-decoration: none;
+  list-style: none;
+  font-size: 18px;
+  color: red;
+  margin-right: 5px;
+}
+
+header.scroll_bajar .navbar .parte_superior .informacion_empresa a:hover {
+  background-color: red;
+}
+
+header.scroll_bajar .navbar .parte_superior .contenedor_titulo h1 {
+  color: red;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+
+header.scroll_bajar .navbar .parte_superior .contenedor_productos_carrito a {
+  text-decoration: none;
+  list-style: none;
+  font-size: 18px;
+  color: red;
+  margin-right: 5px;
+}
+
+header.scroll_bajar .navbar .parte_superior .contenedor_productos_carrito a:hover {
+  background-color: red;
+}
+
+header.scroll_bajar .navbar .parte_superior .contenedor_productos_carrito #cart-icon {
+  color: red;
+}
+
 .navbar {
   width: 100%;
-  background-color: red;
 }
 
 .navbar .parte_superior {
@@ -501,23 +547,27 @@ button {
   font-weight: bold;
 }
 
-.navbar .parte_superior .headerSections {
+.navbar .parte_superior .contenedor_productos_carrito {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.navbar .parte_superior .headerSections a {
+.navbar .parte_superior .contenedor_productos_carrito a {
   margin-right: 50px;
   color: white;
   font-weight: 700;
   font-size: 25px;
 }
 
-.navbar .parte_superior .headerSections a:hover {
+.navbar .parte_superior .contenedor_productos_carrito a:hover {
   transform: scale(1.1, 1.1);
   color: #5a5a5a;
   transition: 0.3s;
+}
+
+.navbar .parte_superior .contenedor_productos_carrito #burger-icon, .navbar .parte_superior .contenedor_productos_carrito #cross-icon {
+  display: none;
 }
 
 #contador {
@@ -794,7 +844,6 @@ button {
 .contenedor_principal {
   display: grid;
   gap: 10px;
-  background-color: red;
   margin-top: -88px;
   width: 100%;
   grid-template-columns: repeat(2, 1fr);
@@ -947,17 +996,18 @@ button {
 .contenedor_principal .contenedor_servicios {
   overflow-x: hidden;
   grid-area: contenedor_inicio-servicios;
-  height: 230px;
+  height: 170px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
 }
 
 .contenedor_principal .contenedor_servicios .card_inicio_servicios {
+  border: 2px solid black;
   margin-top: 10px;
   margin-right: 5px;
   margin-left: 3px;
-  height: 200px;
+  height: 150px;
   width: 450px;
 }
 
@@ -966,21 +1016,27 @@ button {
   flex-wrap: wrap;
 }
 
+.contenedor_principal .contenedor_servicios .card_inicio_servicios .card_inicio_servicios-imagen-titulo h1 {
+  font-weight: bold;
+}
+
 .contenedor_principal .contenedor_servicios .card_inicio_servicios .card_inicio_servicios-imagen-titulo .card_servicios-imagen {
   width: 100px;
-  background-color: white;
+}
+
+.contenedor_principal .contenedor_servicios .card_inicio_servicios .card_inicio_servicios-imagen-titulo .card_servicios-imagen img {
+  width: 100%;
+  object-fit: cover;
 }
 
 .contenedor_principal .contenedor_servicios .card_inicio_servicios .card_inicio_servicios-imagen-titulo .card_servicios-titulo-texto {
   width: calc(100% - 100px);
-  background-color: orange;
 }
 
 .contenedor_principal .contenedor_novedades {
   grid-area: contenedor_novedades;
   display: flex;
   flex-wrap: wrap;
-  background-color: blueviolet;
   justify-content: center;
   /* card del contenedor novedades */
 }

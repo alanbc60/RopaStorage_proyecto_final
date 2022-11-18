@@ -48,7 +48,6 @@
   .contenedor_principal{
     display: grid;
     gap: 10px;
-    background-color: red;
     margin-top: -88px;
     width: 100%;
     // overflow-x: hidden;
@@ -210,10 +209,11 @@
     .contenedor_servicios{
         overflow-x: hidden;
         grid-area: contenedor_inicio-servicios;
-        height: 230px;
+        height: 170px;
         display: grid;
         grid-template-columns: repeat(3,1fr);
         grid-template-rows: auto;
+        // border: 2px solid black;
         // grid-template-areas: 
         //   "card_inicio_servicios card_inicio_servicios card_inicio_servicios";
 
@@ -221,21 +221,31 @@
     
         .card_inicio_servicios{    
           // grid-area: card_inicio_servicios;
+          border: 2px solid black;
           margin-top: 10px;
           margin-right: 5px;
           margin-left: 3px;
-          height: 200px;
+          height: 150px;
           width: 450px;
           .card_inicio_servicios-imagen-titulo{
             display: flex;
             flex-wrap: wrap;
+            h1{
+              font-weight: bold;
+            }
+
             .card_servicios-imagen{
               width: 100px;
-              background-color: white;
+              //background-color: #229acd;
+
+              img{
+                width: 100%;
+                object-fit: cover;
+              }
             }
             .card_servicios-titulo-texto{
               width: calc(100% - 100px);
-              background-color: orange;
+              //background-color: orange;
             }
           }
         }
@@ -246,7 +256,7 @@
         display: flex;
         flex-wrap: wrap;
         // background-color: rgba(236, 247, 255, 1);
-        background-color: blueviolet;
+        // background-color: blueviolet;
         justify-content: center;
 
         .filtro-marca {
