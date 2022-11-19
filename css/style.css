@@ -681,25 +681,65 @@ header.scroll_bajar .navbar .parte_superior .contenedor_productos_carrito #cart-
   }
 }
 
+/* boton checar(se usa en el contenedor novideades u contenedor-principal-imagen) */
+.btn_checar, .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a {
+  height: 40px;
+  display: inline-block;
+  text-decoration: none;
+  background: #3f2c89;
+  padding: 9px 40px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+  box-shadow: 0 8px 0;
+  transition: all 0.2s;
+  animation: btn_checar infinite;
+  animation-duration: 14s;
+  /* animacion del boton checar */
+}
+
+@keyframes btn_checar {
+  from {
+    background-color: #3f2c89;
+    box-shadow: 0 8px 0 #3f2c89;
+  }
+  to {
+    background-color: #3a5eb2;
+    box-shadow: 0 8px 0 #3a5eb2;
+  }
+}
+
+.btn_checar:hover, .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a:hover {
+  color: white;
+}
+
+.btn_checar:active, .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a:active {
+  transform: translateY(4px);
+  box-shadow: 0 4px 0 #3f2c89;
+}
+
+.box_shadow-generico, .productContainer, .contenedor_principal .contenedor_inicio .contenedor_inicio-encuesta .encuesta_primera_pregunta, .contenedor_principal .contenedor_inicio .contenedor_inicio-encuesta .encuesta_segundaPregunta-Edad_Sexo, .contenedor_principal .contenedor_novedades .card_novedades, .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a {
+  background: white;
+  box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16), -10px -10px 10px -1px rgba(10, 99, 169, 0.16);
+}
+
 .productCatalog {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  width: auto;
 }
 
 .productContainer {
-  background-color: blueviolet;
-  max-width: 200px;
-  height: auto;
-  margin: 20px;
-  position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 2px solid #ebebeb;
-  box-shadow: 1px 1px 2px 0 #d7d7d7;
+  flex-wrap: wrap;
+  width: 295px;
+  height: 400px;
+  background-color: #ecf7ff;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 30px;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
 }
 
 .productContainer:hover button {
@@ -710,24 +750,29 @@ header.scroll_bajar .navbar .parte_superior .contenedor_productos_carrito #cart-
   position: relative;
 }
 
-.productContainer__item--photo {
-  display: block;
+.productContainer__item .contenedor_producto-imagen {
+  width: 280px;
+  height: 310px;
+  border-radius: 3px;
+  overflow: hidden;
+  padding-top: 13px;
+  margin-left: 9px;
 }
 
-.productContainer__item--photo img {
+.productContainer__item .contenedor_producto-imagen img {
   width: 100%;
-  height: auto;
+  height: 100%;
   transition: 0.5s;
 }
 
-.productContainer__item--photo img.back {
+.productContainer__item .contenedor_producto-imagen img.back {
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
 }
 
-.productContainer__item--photo img.back:hover {
+.productContainer__item .contenedor_producto-imagen img.back:hover {
   opacity: 1;
 }
 
@@ -836,7 +881,7 @@ header.scroll_bajar .navbar .parte_superior .contenedor_productos_carrito #cart-
   box-shadow: 0 4px 0 #3f2c89;
 }
 
-.box_shadow-generico, .contenedor_principal .contenedor_inicio .contenedor_inicio-encuesta .encuesta_primera_pregunta, .contenedor_principal .contenedor_inicio .contenedor_inicio-encuesta .encuesta_segundaPregunta-Edad_Sexo, .contenedor_principal .contenedor_novedades .card_novedades, .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a {
+.box_shadow-generico, .productContainer, .contenedor_principal .contenedor_inicio .contenedor_inicio-encuesta .encuesta_primera_pregunta, .contenedor_principal .contenedor_inicio .contenedor_inicio-encuesta .encuesta_segundaPregunta-Edad_Sexo, .contenedor_principal .contenedor_novedades .card_novedades, .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a {
   background: white;
   box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16), -10px -10px 10px -1px rgba(10, 99, 169, 0.16);
 }
@@ -1046,7 +1091,7 @@ header.scroll_bajar .navbar .parte_superior .contenedor_productos_carrito #cart-
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: #229acd;
+  text-align: center;
 }
 
 .contenedor_principal .contenedor_novedades .filtro-marca button {

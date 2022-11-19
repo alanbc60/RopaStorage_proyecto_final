@@ -1,5 +1,5 @@
 [
-    {"id": 101, "marca": "Adidas", "nombre": "Adidas Running Solarglide 5 Blanca", "precio": 28000, "link1": "assets/Adidas/zapatilla-running-adidas-ultraboost-20-gris-front.jpg", "link2": "assets/Adidas/zapatilla-running-adidas-ultraboost-20-gris-back.jpg" },
+    {"id": 101, "marca": "Adidas", "nombre": "Chamarra blanca el diablo", "precio": 28000, "link1": "assets/Adidas/zapatilla-running-adidas-ultraboost-20-gris-front.jpg", "link2": "assets/Adidas/zapatilla-running-adidas-ultraboost-20-gris-back.jpg" },
     {"id": 102, "marca": "Adidas", "nombre": "Adidas Running Solarglide 5 Naranja", "precio": 28000, "link1": "assets/Adidas/zapatillas-running-adidas-solarglide-5-naranja-front.jpg", "link2": "assets/Adidas/zapatillas-running-adidas-solarglide-5-naranja-back.jpg" },
     {"id": 103, "marca": "Adidas", "nombre": "Adidas Running Supernova Blanca", "precio": 32000, "link1": "assets/Adidas/zapatillas-running-adidas-supernova-blanca-front.jpg", "link2": "assets/Adidas/zapatillas-running-adidas-supernova-blanca-back.jpg" },
     {"id": 104, "marca": "Adidas", "nombre": "Adidas Running Supernova Gris", "precio": 32000, "link1": "assets/Adidas/zapatillas-running-adidas-supernova-gris-front.jpg", "link2": "assets/Adidas/zapatillas-running-adidas-supernova-gris-back.jpg" },

@@ -1,4 +1,4 @@
-fetch('./data.json')
+fetch('./datos.json')
     .then((resinicial) => resinicial.json())
     .then((res) => {
         const productos = res;
@@ -6,11 +6,11 @@ fetch('./data.json')
         productos.forEach((producto) => {
             const productContainer = document.createElement('div');
             productContainer.classList.add('productContainer');
-            productContainer.classList.add(`${producto.marca}`);
+            productContainer.classList.add(`${producto.categoria}`);
             productContainer.innerHTML = `
                 <div id="${producto.id}" class="productContainer__item">
-                    <div class="productContainer__item--photo">
-                        <img class="front" src=${producto.link1} alt="">
+                    <div class="contenedor_producto-imagen">
+                        <img class="front" src=${producto.link} alt="">
                     </div>
                     <div class="productContainer__item--info">
                         <h3 class="product__tittle">${producto.nombre}</h3>
