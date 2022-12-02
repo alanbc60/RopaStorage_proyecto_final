@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="keywords" content="a" />
         <meta name="description" content="a" />
-        <title>ClotheStorage</title>
+        <title>RopaStorage</title>
         <!-- ----------BOOTSTRAP---------- -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <!-- ----------CSS---------- -->
@@ -30,8 +30,30 @@
                 <div class="parte_superior">
 
                     <div class="informacion_empresa">
-                        <a href="">About Us</a>
-                        <a href="">Contactanos</a>
+                        <a  class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</a>
+
+                        <!-- Modal -->
+                        <div id="myModal" class="modal fade" role="dialog">
+                          <div class="modal-dialog">
+                        
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Modal Header</h4>
+                              </div>
+                              <div class="modal-body">
+                                <p>Some text in the modal.</p>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              </div>
+                            </div>
+                        
+                          </div>
+                        </div>
+                          
+                        <a class="btn btn-info btn-lg" >Contactanos</a>
                     </div>
 
                     <div class="contenedor_titulo">
@@ -47,13 +69,22 @@
                 </div>
  
                 <div class="cart">
-                    <h2 class="cart-title">Tu Carrito</h2>
+                    <h2 class="cart-titulo">Tu Carrito</h2>
                     <div class="cart-content"></div>
-                    <div class="total">
-                        <div class="total-title">Total</div>
-                        <div class="total-price">$0</div>
+                    <div class="cart-ContenedorTotalPago">
+                        <div class="contenedorDescuento_InputBoton">
+                            <h3>Descuento</h3>
+                            <input type="text" class="inputAplicarDescuento" placeholder="Ingrese su descuento">
+                            <button class="btn_descuento">Aplicar</button>
+                        </div>
+                        <div class="contenedorTituloPrecio">
+                            <div class="contenedorTotalPago-titulo">Total</div>
+                            <div class="contenedorTotalPago-precio">$0</div>
+                        </div>
+
                     </div>
-                    <button type="button" class="btn-buy">Pagá ahora</button>
+
+                    <button type="button" class="btn-pagarProductos">Pagar</button>
                     <i class="bx bx-x" id="close-cart"></i>
                 </div>
             </div>
@@ -93,8 +124,8 @@
                                 asi adaptar nuestros productos a ustedes.Al finalizar la encuesta recibiras un premio</h3>
                             <div class="primera_pregunta-botones">
                                 <div class="botones-boton_aceptar_cancelar">
-                                    <button id="botonAceptarPrimeraPregunta">Aceptar</button>
-                                    <button id="botonCancelarPrimeraPregunta">Cancelar</button>
+                                    <button id="botonAceptarPrimeraPregunta" class="btn btn-primary">Aceptar</button>
+                                    <button id="botonCancelarPrimeraPregunta" class="btn btn-danger">Cancelar</button>
                                 </div>
                             </div>
                         </div>
@@ -242,7 +273,7 @@
         
                     <div class="contenedor_modal-texto">
                         <p id="modal_texto">
-                            Es una buena eleccion :),agregala
+                            Es una buena eleccion :), agregala
                         </p>
                     </div>
         
@@ -304,13 +335,12 @@
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script src="js/typed.js"></script>
         <script src="js/stock.js"></script>
         <script src="js/app.js"></script>
         <script src="js/modal.js"></script>
         <script src="js/filter.js"></script>
         <script src="js/alerts.js"></script>
-        <script src="script.js"></script>
+        <script src="js/script.js"></script>
 
         <script type="text/javascript">
 

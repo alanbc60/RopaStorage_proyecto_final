@@ -147,8 +147,8 @@
       }
   
       .contenedor_inicio-encuesta{
-        // background-color: rgba(236, 247, 255, 1);
-        background-color: rebeccapurple;
+        background-color: rgba(236, 247, 255, 1);
+        // background-color: rebeccapurple;
         backdrop-filter: blur(12px);
         border: 1px solid rgba(255, 255, 255,0.70);
         height: 420px;
@@ -258,23 +258,25 @@
         // background-color: rgba(236, 247, 255, 1);
         // background-color: blueviolet;
         justify-content: center;
-
+        margin-bottom: 13px;
         .filtro-marca {
           width: 100%;
           display: flex;
           flex-direction: row;
           align-items: center;
           text-align: center;
-          // background-color: #229acd;
+          justify-content: center;
+
           button {
-              width: 100px;
+              width: 120px;
               font-size: 20px;
               height: auto;
-              padding: 10px;
+              padding: 7px;
+              
               margin: 10px;
               color: white;
               background-color: #3f2c89;
-              border-radius: 20px;
+              border-radius: 10px;
               &:hover {
                   background-color: #0c3141;
               }
@@ -362,7 +364,7 @@
     display: flex;
     position: absolute;
     pointer-events: none;
-    background-color: rgba(0, 0, 0, 0.3);
+
     height: 100vh;
     width: 100vw;
     align-items: center;

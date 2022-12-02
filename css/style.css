@@ -6,85 +6,127 @@
   width: 400px;
   height: 100vh;
   padding: 20px;
-  background-color: #5A5A5A;
+  background-color: aliceblue;
   transition: 0.8s;
   overflow-x: hidden;
   overflow-y: scroll;
   z-index: 15;
 }
 
-.cart.active {
-  right: 0;
-  transition: 0.5s;
-}
-
-.cart-title {
+.cart .cart-titulo {
   text-align: center;
   font-size: 32px;
-  font-weight: 600;
+  font-weight: bold;
   margin-top: 32px;
+  color: cornflowerblue;
 }
 
-.cart-box {
+.cart .cart-contenedorProducto {
   display: grid;
   grid-template-columns: 37% 45% 18%;
   align-items: center;
   gap: 16px;
   margin-top: 16px;
+  background-color: aliceblue;
 }
 
-.cart-img {
-  object-fit: contain;
-  padding: 10px;
+.cart .cart-contenedorProducto .contenedorProducto-imagen {
+  height: 150px;
+  width: 130px;
 }
 
-.detail-box {
+.cart .cart-contenedorProducto .contenedorProducto-imagen img {
+  border: 4px solid #229ACD;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.cart .cart-contenedorProducto .contenedorProducto-informacion {
   display: grid;
   row-gap: 8px;
 }
 
-.cart-product-title {
-  font-size: 16px;
-  /* text-transform: uppercase; */
-  color: black;
+.cart .cart-contenedorProducto .contenedorProducto-informacion .cart-productoTitulo h2 {
+  font-size: 18px;
+  text-transform: uppercase;
+  color: cornflowerblue;
 }
 
-.cart-price {
-  font-weight: 500;
+.cart .cart-contenedorProducto .contenedorProducto-informacion .cart-precio h2 {
+  font-weight: bold;
   font-size: 20px;
 }
 
-.cart-quantity {
+.cart .cart-contenedorProducto .carrito_itemCantidad {
   border: 1px solid black;
   width: 38px;
   text-align: center;
   font-size: 16px;
 }
 
-.cart-remove {
+.cart .cart-contenedorProducto .cart-remove {
   font-size: 24px;
-  color: red;
+  color: white;
   cursor: pointer;
 }
 
-.total {
-  display: flex;
-  justify-content: flex-end;
+.cart .cart-contenedorProducto .cart-remove:hover {
+  color: red;
+}
+
+.cart .cart-ContenedorTotalPago {
   margin-top: 24px;
   border-top: 1px solid Black;
 }
 
-.total-title {
+.cart .cart-ContenedorTotalPago .contenedorDescuento_InputBoton {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
+  grid-template-areas: "titulo_descuento    titulo_descuento" "input_descuento btn_descuento";
+  margin-bottom: 7px;
+}
+
+.cart .cart-ContenedorTotalPago .contenedorDescuento_InputBoton h3 {
+  grid-area: titulo_descuento;
+  color: #229ACD;
+}
+
+.cart .cart-ContenedorTotalPago .contenedorDescuento_InputBoton .inputAplicarDescuento {
+  grid-area: input_descuento;
+  height: 30px;
+}
+
+.cart .cart-ContenedorTotalPago .contenedorDescuento_InputBoton .btn_descuento {
+  grid-area: btn_descuento;
+  margin-left: 15px;
+  padding: 5px 6px;
+  border: none;
+  background-color: #229ACD;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.cart .cart-ContenedorTotalPago .contenedorTituloPrecio {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cart .cart-ContenedorTotalPago .contenedorTituloPrecio .contenedorTotalPago-titulo {
   font-size: 22px;
   font-weight: 600;
 }
 
-.total-price {
+.cart .cart-ContenedorTotalPago .contenedorTituloPrecio .contenedorTotalPago-precio {
   margin-left: 8px;
   font-size: 22px;
 }
 
-.btn-buy {
+.cart .btn-pagarProductos {
   display: flex;
   margin: 24px auto 0 auto;
   padding: 12px 20px;
@@ -97,8 +139,13 @@
   border-radius: 5px;
 }
 
-.btn-buy:hover {
+.cart .btn-pagarProductos:hover {
   background-color: #5A5A5A;
+}
+
+.cart.active {
+  right: 0;
+  transition: 0.5s;
 }
 
 #close-cart {
@@ -478,7 +525,8 @@ header.scroll_bajar .navbar .parte_superior .informacion_empresa a {
 }
 
 header.scroll_bajar .navbar .parte_superior .informacion_empresa a:hover {
-  background-color: red;
+  transform: scale(1.1, 1.1);
+  transition: 0.3s;
 }
 
 header.scroll_bajar .navbar .parte_superior .contenedor_titulo h1 {
@@ -493,14 +541,18 @@ header.scroll_bajar .navbar .parte_superior .contenedor_productos_carrito a {
   list-style: none;
   font-size: 18px;
   color: red;
-  margin-right: 5px;
+  margin-right: 55px;
 }
 
 header.scroll_bajar .navbar .parte_superior .contenedor_productos_carrito a:hover {
-  background-color: red;
+  background-color: white;
 }
 
 header.scroll_bajar .navbar .parte_superior .contenedor_productos_carrito #cart-icon {
+  color: red;
+}
+
+header.scroll_bajar .navbar .parte_superior .contenedor_productos_carrito #cart-icon #contador {
   color: red;
 }
 
@@ -532,7 +584,8 @@ header.scroll_bajar .navbar .parte_superior .contenedor_productos_carrito #cart-
 }
 
 .navbar .parte_superior .informacion_empresa a:hover {
-  background-color: red;
+  transform: scale(1.3, 1.3);
+  transition: 0.3s;
 }
 
 .navbar .parte_superior .contenedor_titulo {
@@ -746,11 +799,11 @@ header.scroll_bajar .navbar .parte_superior .contenedor_productos_carrito #cart-
   opacity: 1;
 }
 
-.productContainer__item {
+.productContainer .productContainer-card {
   position: relative;
 }
 
-.productContainer__item .contenedor_producto-imagen {
+.productContainer .productContainer-card .contenedor_producto-imagen {
   width: 280px;
   height: 310px;
   border-radius: 3px;
@@ -759,37 +812,38 @@ header.scroll_bajar .navbar .parte_superior .contenedor_productos_carrito #cart-
   margin-left: 9px;
 }
 
-.productContainer__item .contenedor_producto-imagen img {
+.productContainer .productContainer-card .contenedor_producto-imagen img {
+  object-fit: cover;
   width: 100%;
   height: 100%;
   transition: 0.5s;
 }
 
-.productContainer__item .contenedor_producto-imagen img.back {
+.productContainer .productContainer-card .contenedor_producto-imagen img.back {
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
 }
 
-.productContainer__item .contenedor_producto-imagen img.back:hover {
+.productContainer .productContainer-card .contenedor_producto-imagen img.back:hover {
   opacity: 1;
 }
 
-.productContainer__item--info {
+.productContainer .productContainer-card .contenedor_producto-texto {
   margin: 0 20px 20px 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.productContainer__item--info h3 {
+.productContainer .productContainer-card .contenedor_producto-texto h3 {
   margin-bottom: 10px;
   font-size: 16px;
   font-weight: 400;
 }
 
-.productContainer__item button {
+.productContainer .productContainer-card button {
   position: absolute;
   bottom: 17px;
   right: 10px;
@@ -805,7 +859,8 @@ header.scroll_bajar .navbar .parte_superior .contenedor_productos_carrito #cart-
   height: 35px;
 }
 
-.productContainer__item button:hover {
+.productContainer .productContainer-card button:hover {
+  opacity: 1;
   background-color: #1a4e64;
 }
 
@@ -979,7 +1034,7 @@ header.scroll_bajar .navbar .parte_superior .contenedor_productos_carrito #cart-
 }
 
 .contenedor_principal .contenedor_inicio .contenedor_inicio-encuesta {
-  background-color: rebeccapurple;
+  background-color: #ecf7ff;
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.7);
   height: 420px;
@@ -1083,6 +1138,7 @@ header.scroll_bajar .navbar .parte_superior .contenedor_productos_carrito #cart-
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 13px;
   /* card del contenedor novedades */
 }
 
@@ -1092,17 +1148,18 @@ header.scroll_bajar .navbar .parte_superior .contenedor_productos_carrito #cart-
   flex-direction: row;
   align-items: center;
   text-align: center;
+  justify-content: center;
 }
 
 .contenedor_principal .contenedor_novedades .filtro-marca button {
-  width: 100px;
+  width: 120px;
   font-size: 20px;
   height: auto;
-  padding: 10px;
+  padding: 7px;
   margin: 10px;
   color: white;
   background-color: #3f2c89;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .contenedor_principal .contenedor_novedades .filtro-marca button:hover {
@@ -1176,7 +1233,6 @@ header.scroll_bajar .navbar .parte_superior .contenedor_productos_carrito #cart-
   display: flex;
   position: absolute;
   pointer-events: none;
-  background-color: rgba(0, 0, 0, 0.3);
   height: 100vh;
   width: 100vw;
   align-items: center;

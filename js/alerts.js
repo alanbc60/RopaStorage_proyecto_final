@@ -16,6 +16,15 @@ function alertRepetido() {
     });
 }
 
+function alertDescuentoAplicado() {
+    Swal.fire({
+        title: 'Ya aplicaste el descuento',
+        text: 'No puedes aplicar más de una vez el descuento',
+        icon: 'warning',
+        confirmButtonText: 'OK',
+    });
+}
+
 function alertVacio() {
     Swal.fire({
         title: 'El carrito está vacío',

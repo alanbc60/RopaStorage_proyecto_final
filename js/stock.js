@@ -8,11 +8,11 @@ fetch('./datos.json')
             productContainer.classList.add('productContainer');
             productContainer.classList.add(`${producto.categoria}`);
             productContainer.innerHTML = `
-                <div id="${producto.id}" class="productContainer__item">
+                <div id="${producto.id}" class="productContainer-card">
                     <div class="contenedor_producto-imagen">
                         <img class="front" src=${producto.link} alt="">
                     </div>
-                    <div class="productContainer__item--info">
+                    <div class="contenedor_producto-texto">
                         <h3 class="product__tittle">${producto.nombre}</h3>
                         <p class="product__price">$${producto.precio}</p>
                     </div>
@@ -23,22 +23,31 @@ fetch('./datos.json')
         });
     });
 
-/* for (const producto of productos) {
-      const productContainer = document.createElement('div');
-      productContainer.classList.add('productContainer');
-      productContainer.setAttribute('id', producto.id);
-      productContainer.innerHTML = `
-        <div class="productContainer__item">
-            <div class="productContainer__item--photo">
-                <img class="front" src=${producto.link1} alt="">
-                <img class="back" src=${producto.link2} alt="">
-            </div>
-            <div class="productContainer__item--info">
-                <h3 class="product__tittle">${producto.nombre}</h3>
-                <p class="product__price">$${producto.precio}</p>
-            </div>
-            <button class="fa-solid fa-cart-plus add-cart" type="button"></button>
-        </div>
-        `;
-      productCatalog.appendChild(productContainer);
-  } */
+
+
+//Recomendaciones
+
+// fetch('./datos.json')
+//     .then((resinicial) => resinicial.json())
+//     .then((res) => {
+//         const productos = res;
+//         const productCatalog = document.querySelector('#contenedor_principal-modal');
+//         productos.forEach((producto) => {
+//             const productContainer = document.createElement('div');
+//             productContainer.classList.add('contenedor_modal');
+//             productContainer.classList.add(`${producto.categoria}`);
+//             productContainer.innerHTML = `
+//                 <div id="${producto.id}" class="productContainer-card">
+//                     <div class="contenedor_producto-imagen">
+//                         <img class="front" src=${producto.link} alt="">
+//                     </div>
+//                     <div class="contenedor_producto-texto">
+//                         <h3 class="product__tittle">${producto.nombre}</h3>
+//                         <p class="product__price">$${producto.precio}</p>
+//                     </div>
+//                     <button class="fa-solid fa-cart-plus add-cart" type="button"></button>
+//                 </div>
+//                 `;
+//             productCatalog.appendChild(productContainer);
+//         });
+//     });
