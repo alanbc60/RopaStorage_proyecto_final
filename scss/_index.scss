@@ -41,6 +41,7 @@
     background: white;
     box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16),
         -10px -10px 10px -1px rgba(10, 99, 169, 0.16);
+    cursor: pointer;
   }
   
   
@@ -97,14 +98,15 @@
           // background-color: red;
           margin: 0 auto;
           margin-top: 20px;
+          //Boton de realizar encuesta
           a{
             text-decoration: none;
-            cursor: pointer;
             background-color: white;
             color: red;
             border: 2px solid red;
             padding: 10px  35px;
             border-radius: 30px;
+            cursor: pointer;
             // margin-right:  15px;
           }
           
@@ -126,11 +128,13 @@
           a{
             text-decoration: none;
             cursor: pointer;
-            background-color: white;
-            color: red;
-            border: 2px solid red;
+            background-color: #f5f5f5;
+            color: #3f2c89;
+            border: 4px solid #3f2c89;
             padding: 10px  35px;
-            border-radius: 30px;
+            border-radius: 17px;
+            cursor: pointer;
+            font-weight: 700;
             // margin-right:  15px;
           }
           
@@ -138,8 +142,9 @@
             background-color: blue;
             border: 2px solid red;
             padding: 10px 35px;
-            border-radius: 30px;
+            border-radius: 17px;
             color: white;
+            cursor: pointer;
             // margin-right: 15px;
           }
         }
@@ -159,18 +164,52 @@
         padding: 10px;
         .encuesta_primera_pregunta{
           display: none;
-          height: 300px;
+          height: 400px;
           width: 450px;
           background-color: rgba(236, 247, 255, 1);
           backdrop-filter: blur(12px);
           border: 1px solid rgba(255, 255, 255, 0.70);
           @extend .box_shadow-generico;
-          // background-color: red;
           display: none;
-          h3{
-            font-weight: 200;
+
+          .titulo_encuesta{
+            h2{
+              color: #3f2c89;
+            }
           }
+          .primera_pregunta-texto{
+            h3{
+              font-weight: 200;
+            }
+          }
+
+          .botones-boton_aceptar_cancelar{
+            width: 100%;
+            height: 60px;
+            padding-left: 60px;
+            margin-top: 70px;
+            a{
+                margin-top: 50px;
+                margin-right: 18px;
+                text-decoration: none;
+                background-color: white;
+                color: #3f2c89;
+                border: 2px solid #3f2c89;
+                padding: 10px  35px;
+                border-radius: 20px;
+                cursor: pointer;
+            }
+            
+            a:hover{
+                background-color: #0c3141;
+                border: 3px solid #3f2c89;
+                color: #fff;
+                cursor: pointer;
+              }
+          }
+
         }
+
         .encuesta_segundaPregunta-Edad_Sexo{
           height: 300px;
           width: 450px;
@@ -359,7 +398,9 @@
   
   }
   
-  
+  //========Contenedores modal de encuestas ======
+
+
   .contenedor_principal_modal {
     display: flex;
     position: absolute;
@@ -460,7 +501,7 @@
         grid-area: contenedor_modal-texto;
         // background-color: blue;
         height: auto;
-        width: 290px;
+        width: 400px;
       }
       .contenedor_modal-boton{
         grid-area: contenedor_modal-boton;
@@ -500,81 +541,121 @@
     background-color: #0c3141 !important;
 }
 
-//========Contenedor categorias ======
 
 
+// ========= Modales de contacto y promociones =======
+#popup {
+  display: none;
+  position: fixed;
+  z-index: 3;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  padding: 50px;
+  box-shadow: 0 5px 30px rgba(0,0,0,.30);
+  background-color: #fff;
+  opacity: 0;
+  transition: 0.5s;
+  .popup_contenedor_imagen{
+    margin-left: 50px;
+    // background-color: #3f2c89;
+    width: 300px;
+    height: 300px;
+    justify-content: center;
+    
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .popup_contenedor_boton{
+    margin-top: 10px;
 
-
-
-.hideProducto {
-    display: none;
+    a{
+      display:flex;
+      align-items: center;
+      justify-content:center;
+      flex-direction: column;
+      padding: 14px;
+      background-color: #3f2c89;
+      color: white;
+      cursor: pointer;
+    }
+  }
 }
 
-.showProducto {
+#popup.active{
+  display: block;
+  top: 50%;
+  opacity: 1;
+  visibility: visible;
+  transition: 0.5s;
+}
+
+#popup_contactanos{
+  display: none;
+  position: fixed;
+  z-index: 3;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  padding: 50px;
+  box-shadow: 0 5px 30px rgba(0,0,0,.30);
+  background-color: #fff;
+  opacity: 0;
+  transition: 0.5s;
+
+  .popup_contactanos-contenedor_cerrar{
+    // background-color: #0c3141;
+    text-align: end;
+    button{
+      justify-content: end;
+      align-items: center;
+      right: 0;
+    }
+  }
+
+  form{
+    background-color: white;
     display: flex;
-}
+    flex-direction: column;
+    padding: 2vw 4vw;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
 
-@media screen and (max-width:1280px) {
-    .productContainer button{
-        opacity: 1;
+    h3{
+      color: #0c3141;
+      font-weight: 800;
+      margin-bottom: 20px;
     }
-}
-
-@media screen and (max-width:720px) {
-    .productContainer {
-        max-width: 170px;
-        margin: 5px;
+    input, textarea{
+      border: 0;
+      margin: 10px 0;
+      padding: 20px;
+      outline: none;
+      background: #f5f5f5;
+      font-size: 16px;
     }
+    button{
+      padding: 15px;
+      background-color: #ff5361;
+      color: #fff;
+      font-size: 18px;
+      border: 0;
+      outline: none;
+      cursor: pointer;
+    }
+  }
 }
 
-
-
-// @media screen and (max-width: 1680px) {
-//     .contenedor-general {
-//         height: 100%;
-//     }
-//     .contenedor-imagen {
-//         height: auto;
-//     }
-//     .contenedor-texto {
-//         width: 50%;
-//         font-size: 50px;
-//     }
-// }
-
-// @media screen and (max-width: 1280px) {
-//     .layout {
-//         display: flex;
-//         flex-direction: column;
-//     }
-//     .filtro-marca {
-//         display: flex;
-//         flex-direction: row;
-//         flex-wrap: wrap;
-//         justify-content: center;
-//     }
-// }
-
-// @media screen and (max-width: 800px) {
-//     .contenedor-texto {
-//         font-size: 30px;
-//     }
-//     .filtro-marca {
-//         button {
-//             margin: 5px;
-//         }
-//     }
-//     .subtitulo {
-//         margin-bottom: 0;
-//         h3 {
-//             font-size: 25px;
-//             word-spacing: 4px;
-//         }
-//     }
-// }
-
-// @media screen and (max-width: 720px) {
-//     .contenedor-texto {
-//         font-size: 20px;
-//     }
-// }
+#popup_contactanos.active{
+  display: block;
+  top: 50%;
+  opacity: 1;
+  visibility: visible;
+  transition: 0.5s;
+}

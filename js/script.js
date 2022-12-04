@@ -7,16 +7,23 @@ fetch('./datos.json')
         /* Maiking Function */
         const modal_container = document.getElementById('contenedor_principal-modal');
         const botonCerrarModal = document.getElementById('close');
+
+        //Variables del modal - promociones
+        const popup_promociones_container = document.getElementById('popup');
+        const btn_promociones = document.getElementById('btn_promociones');
+        const botonCerrarPromocion = document.getElementById('close_popup_promociones');
+
+        //Variables del modal - contactanos
+        const popup_contactanos_container = document.getElementById('popup_contactanos');
+        const btn_contactanos = document.getElementById('btn_contactanos');
+        const botonCerrarContactanos = document.getElementById('close_popup_contactanos');
+
         //Variables globales
         let edad, sexo;
         let exito, opcion;
         let nombreProducto;
         let ruta;
         var arrayInput = new Array();
-
-
-
-
 
         const contenedoresEncuesta = {
             //Al hacer click en el boton realizar encuesta y mostrar el div general
@@ -59,6 +66,8 @@ fetch('./datos.json')
                 contenedoresEncuesta.mensaje1.style.display = "block";
                 contenedoresEncuesta.contenedorPrimeraPregunta.style.display = "block";
                 botonesEncuesta.botonAbrirEncuesta.style.display = "none";
+                popup_promociones_container.style.display = "none";    
+                popup_contactanos_container.style.display = "none";    
         }
 
 
@@ -300,7 +309,7 @@ fetch('./datos.json')
             botonesEncuesta.generarRecompensa.style.display = "none";
         }
 
-        /* Ad To cart */
+        /* añadir al carrito */
         function addCartClicked(event) {
             console.log("Producto de recomendacion añadido al carrito :D");
             let button = event.target;
@@ -360,6 +369,45 @@ fetch('./datos.json')
             cartShopBox.getElementsByClassName('cart-quantity')[0].addEventListener('change', quantityChanged);
         }
 
+        //=====funciones de la navbar
+
+        //cerrar el popup de contactanos
+        botonCerrarContactanos.addEventListener('click', async () => {
+            console.log("Se presiono el boton cerrar promociones");
+            popup_contactanos_container.style.opacity = "0";
+            console.log("Se cerro el popup");
+
+            // await sleep(tiempo_ms);
+    
+        });
+    
+        //Abrir el popup de contactanos
+        btn_contactanos.addEventListener('click', async () => {
+            console.log("Se presiono el boton abrir contactanos");
+            popup_contactanos_container.style.display = "block";    
+            popup_contactanos_container.style.opacity = "1";
+            popup_contactanos_container.style.visibility = "visible";
+        });
+
+
+        //cerrar el popup de promociones
+        botonCerrarPromocion.addEventListener('click', async () => {
+                console.log("Se presiono el boton cerrar promociones");
+                popup_promociones_container.style.opacity = "0";
+                console.log("Se cerro el popup");
+        });
+
+        //Abrir el popup de promociones
+        btn_promociones.addEventListener('click', async () => {
+            popup_promociones_container.style.display = "block";    
+            popup_promociones_container.style.opacity = "1";
+            popup_promociones_container.style.visibility = "visible";
+            popup_contactanos_container.style.display="none";
+        });
+
+
+        
+        
 
     });
 

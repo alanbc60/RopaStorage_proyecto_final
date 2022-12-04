@@ -21,6 +21,11 @@
         <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
         <!-- TOASTIFY -->
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+        <!-- icono del footer -->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+            <!-- icono de menú para la navbar -->
+        <link rel="stylesheet" type="text/css"
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
 
@@ -30,34 +35,12 @@
                 <div class="parte_superior">
 
                     <div class="informacion_empresa">
-                        <a  class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</a>
-
-                        <!-- Modal -->
-                        <div id="myModal" class="modal fade" role="dialog">
-                          <div class="modal-dialog">
-                        
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Modal Header</h4>
-                              </div>
-                              <div class="modal-body">
-                                <p>Some text in the modal.</p>
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                              </div>
-                            </div>
-                        
-                          </div>
-                        </div>
-                          
-                        <a class="btn btn-info btn-lg" >Contactanos</a>
+                        <a id="btn_promociones">Promociones</a>
+                        <a id="btn_contactanos">Contactanos</a>
                     </div>
 
                     <div class="contenedor_titulo">
-                        <h1>RopaStorage</h1>
+                        <a href="#">RopaStorage</a>
                     </div>
 
                     <div class="contenedor_productos_carrito">
@@ -100,9 +83,38 @@
             </a>
         </div>
 
+        <!-- Modal de descuento -->
+        <div id="popup">
+            <div class="popup_contenedor_imagen">
+                <img src="imagenes/services/promociones.png" alt="imagen promociones">
+            </div>
+            <div class="popup_contenedor_texto">
+                <h2> Disfuta de las grandes promociones de diciembre <br><b>con un 10% de descuento</b> en toda la tienda</h2>
+            </div>
+            <div class="popup_contenedor_boton">
+                <a id="close_popup_promociones">Cerrar ventana</a>
+            </div>
+        </div>
+
+        <div id="popup_contactanos">
+            <div class="popup_contactanos-contenedor_cerrar">
+                <button class="btn-close" id="close_popup_contactanos"></button>
+            </div>
+            <form onsubmit="sendEmail(); reset(); return false;">
+                <h3>Contactanos</h3>
+                <input type="text" id="name" placeholder="Ingresa tu nombre" >
+                <input type="email" id="email" placeholder="Ingresa tu email" >
+                <input type="text"  id="`phone" placeholder="Número de telefono">
+                <textarea  id="mensaje" cols="30" rows="4" placeholder="En que podemos ayudarte"></textarea>
+                <button type="submit">Enviar</button>
+
+            </form>
+        </div>
+
         <section>
             <div class="contenedor_principal" id="main">
                 <div class="contenedor_inicio">
+
                     <div class="contenedor_inicio-texto-boton">
                         <div class="contenedor_inicio-texto">
                             <h2>Realiza una encuesta rapida y gana un descuento</h2>
@@ -120,15 +132,17 @@
                             <div class="titulo_encuesta">
                                 <h2>Encuesta</h2>
                             </div>
-                            <h3>Esta es una encuesta para saber los gustos de nuestros usuarios y
+                            <div class="primera_pregunta-texto">
+                                <h3>Esta es una encuesta para saber los gustos de nuestros usuarios y
                                 asi adaptar nuestros productos a ustedes.Al finalizar la encuesta recibiras un premio</h3>
-                            <div class="primera_pregunta-botones">
-                                <div class="botones-boton_aceptar_cancelar">
-                                    <button id="botonAceptarPrimeraPregunta" class="btn btn-primary">Aceptar</button>
-                                    <button id="botonCancelarPrimeraPregunta" class="btn btn-danger">Cancelar</button>
-                                </div>
                             </div>
+                            <div class="botones-boton_aceptar_cancelar">
+                                <a id="botonAceptarPrimeraPregunta">Aceptar</a>
+                                <a id="botonCancelarPrimeraPregunta">Cancelar</a>
+                            </div>
+
                         </div>
+
                         <div class="encuesta_segundaPregunta-Edad_Sexo">
                             <div class="row mt-4">
                                 <div class="col-lg-12">
@@ -149,7 +163,7 @@
                                                 <input type="text" name="dato[]" class="form-control datoInput">
                                             </div>
                                             <br>
-                                            <button type="submit" class="btn btn-primary recibiEdadSexo">Mirar</button>
+                                            <button type="submit" class="btn btn-primary recibiEdadSexo">Continuar</button>
                                         </div>
         
                                     </div>
@@ -254,7 +268,7 @@
                 <!-- Fin del contenedor novedades -->
             </div>
         
-        
+            <!-- Modal donde se muestra el producto al finalizar la encuesta -->
             <div class="contenedor_principal_modal" id="contenedor_principal-modal">
                 <div class="contenedor_modal">
         
@@ -273,17 +287,18 @@
         
                     <div class="contenedor_modal-texto">
                         <p id="modal_texto">
-                            Es una buena eleccion :), agregala
+                            Es una buena eleccion :)
+                            Obten el decuento usando el código <b> descuentodic2022</b>
                         </p>
                     </div>
         
-                    <div class="contenedor_modal-boton">
+                    <!-- <div class="contenedor_modal-boton">
                         <a href="">Agregar</a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>
-
+        <!-- Footer -->
         <footer class="footer">
             <div class="container__footer">
                 <div class="row">
@@ -307,20 +322,24 @@
                         </ul>
                     </div>
                     <div class="footer-col">
-                        <h4>Ropa</h4>
+                        <h4>Conocenos</h4>
                         <ul>
-                            <li><a href="#">Nombre</a></li>
-                            <li><a href="#">Mujer</a></li>
-                            <li><a href="#">Unisex</a></li>
+                            <li> <a class="" href="https://goo.gl/maps/gZJJznjvERVLBmFa7" target="_blank"> México, CDMX,
+                                Viaducto</a>
+                            </li>
+
+                            <li> <a class="" href="https://goo.gl/maps/gZJJznjvERVLBmFa7" target="_blank"> México, CDMX,
+                                Chapultepec</a>
+                            </li>
                         </ul>
                     </div>
                     <div class="footer-col">
                         <h4>Síganos</h4>
                         <div class="social-links">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://www.telegram.com" target="_blank"><i class="fab fa-telegram"></i></a>
+                            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>
@@ -331,7 +350,6 @@
         </footer>
 
 
-        <!-- Footer -->
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -341,6 +359,7 @@
         <script src="js/filter.js"></script>
         <script src="js/alerts.js"></script>
         <script src="js/script.js"></script>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
 
         <script type="text/javascript">
 
@@ -351,11 +370,26 @@
                 var navbar_bajar = document.querySelector("header");
                 navbar_bajar.classList.toggle("scroll_bajar", window.scrollY > 0);
             });
-    
-            //var hamburger = document.querySelector(".hamburger");
-            //hamburger.addEventListener("click", function () {
-            //    document.querySelector("body").classList.toggle("active");
-            //});
+
+            function sendEmail(){
+                Email.send({
+                    Host : "smtp.gmail.com",
+                    Username : "usuarioRopaStorage",
+                    Password : "password",
+                    To : 'alanbc1000@gmail.com',
+                    From : document.getElementById("email").value,
+                    Subject : "RopaStorage - reclamo/sugerencia",
+                    /*Body : "Name: " + document.getElementById("name").value
+                        + "<br> Email: " + document.getElementById("email").value
+                        + "<br>  Telefono: " + document.getElementById("phone").value
+                        + "<br> Mensaje: " + document.getElementById("message").value
+
+                    */
+                }).then(
+                  message => alert("Mensaje enviado a nuestro atención al cliente")
+                );
+            }
+
     
         </script>
     </body>
